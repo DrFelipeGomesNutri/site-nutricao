@@ -189,7 +189,10 @@
     border: 1px solid rgba(255,255,255,0.18);
     padding: 6px 12px;
     border-radius: 999px;
+    text-decoration: none;
+    transition: border-color 0.15s ease, background 0.15s ease;
   }
+  .hero-tag:hover { border-color: var(--gold-light); background: rgba(255,255,255,0.06); }
   .hero-tag-featured {
     color: #1a1204;
     font-weight: 800;
@@ -297,7 +300,10 @@
     border: 1px solid rgba(212,175,55,0.3);
     border-radius: var(--radius-m);
     padding: 28px 26px;
+    scroll-margin-top: 90px;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
   }
+  .destaque-card:target { border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 35%, transparent); }
   .destaque-card .num {
     font-family: var(--font-display);
     font-size: 0.78rem;
@@ -827,7 +833,10 @@
     border-radius: var(--radius-m);
     padding: 26px 24px;
     box-shadow: var(--shadow);
+    scroll-margin-top: 90px;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
   }
+  .service-card:target { border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 35%, transparent); }
   .service-card h3 {
     font-family: var(--font-body);
     text-transform: none;
@@ -1026,12 +1035,12 @@
       <h1 style="margin-top:14px;">Nutrição que trata <em>o todo</em>, não só o prato.</h1>
       <p class="hero-sub">Atendimento que cruza exames, sintomas, rotina e histórico para montar um plano alimentar real — pensado pra sua vida, não pra uma dieta genérica.</p>
       <div class="hero-tags">
-        <span class="hero-tag hero-tag-featured">Emagrecimento</span>
-        <span class="hero-tag hero-tag-featured">Fertilidade</span>
-        <span class="hero-tag">Saúde da Mulher</span>
-        <span class="hero-tag">Suporte Neuro-Autoimune</span>
-        <span class="hero-tag">Recuperação e Vitalidade</span>
-        <span class="hero-tag">Visão Sistêmica</span>
+        <a class="hero-tag hero-tag-featured" href="#tema-emagrecimento">Emagrecimento</a>
+        <a class="hero-tag hero-tag-featured" href="#tema-fertilidade">Fertilidade</a>
+        <a class="hero-tag" href="#tema-saude-da-mulher">Saúde da Mulher</a>
+        <a class="hero-tag" href="#tema-neuro-autoimune">Suporte Neuro-Autoimune</a>
+        <a class="hero-tag" href="#tema-recuperacao-vitalidade">Recuperação e Vitalidade</a>
+        <a class="hero-tag" href="#tema-visao-sistemica">Visão Sistêmica</a>
       </div>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://wa.me/5561998472986?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
@@ -1052,12 +1061,12 @@
 
 <section class="destaques">
   <div class="wrap destaques-grid">
-    <div class="destaque-card">
+    <div class="destaque-card" id="tema-emagrecimento">
       <div class="num">FOCO PRINCIPAL</div>
       <h3>Emagrecimento</h3>
       <p>Planejamento alimentar estratégico para emagrecimento real, sustentável e alinhado à sua rotina — sem dietas genéricas.</p>
     </div>
-    <div class="destaque-card">
+    <div class="destaque-card" id="tema-fertilidade">
       <div class="num">FOCO PRINCIPAL</div>
       <h3>Fertilidade</h3>
       <p>Suporte nutricional para equilíbrio hormonal e fertilidade, dentro da abordagem de Saúde da Mulher.</p>
@@ -1189,22 +1198,22 @@
       <p>Uma abordagem que olha além do prato: hormônios, sistema nervoso, histórico clínico e emocional entram na mesma análise antes de qualquer prescrição.</p>
     </div>
     <div class="grid-services">
-      <div class="service-card">
+      <div class="service-card" id="tema-saude-da-mulher">
         <h3>Saúde da Mulher</h3>
         <p>Equilíbrio hormonal e nutricional em casos de TPM, SOP, fertilidade e menopausa.</p>
         <div class="tag-list"><span>TPM</span><span>SOP</span><span>Fertilidade</span><span>Menopausa</span></div>
       </div>
-      <div class="service-card">
+      <div class="service-card" id="tema-neuro-autoimune">
         <h3>Suporte Neuro-Autoimune</h3>
         <p>Estratégias nutricionais acolhedoras para TDAH, TEA e condições crônicas ou autoimunes.</p>
         <div class="tag-list"><span>TDAH</span><span>TEA</span><span>Doenças crônicas</span></div>
       </div>
-      <div class="service-card">
+      <div class="service-card" id="tema-recuperacao-vitalidade">
         <h3>Recuperação e Vitalidade</h3>
         <p>Acompanhamento especializado pós-câncer e abordagens naturais para retomada de energia e saúde.</p>
         <div class="tag-list"><span>Pós-câncer</span><span>Tratamentos naturais</span></div>
       </div>
-      <div class="service-card">
+      <div class="service-card" id="tema-visao-sistemica">
         <h3>Visão Sistêmica</h3>
         <p>Integração completa entre corpo, mente e emoções — a base de todo plano montado aqui.</p>
         <div class="tag-list"><span>Corpo</span><span>Mente</span><span>Emoções</span></div>
