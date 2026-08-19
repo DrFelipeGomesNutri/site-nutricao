@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drfelipegomesnutri.com.br/sitemap.xml
