@@ -928,6 +928,88 @@
   .receita-card .receita-fonte { font-size: 0.76rem; color: var(--text-muted); }
   .receitas-nota { margin-top: 22px; font-size: 0.82rem; color: var(--text-muted); }
 
+  /* ---------- DICAS DE COMPRAS (banner rotativo Shopee) ---------- */
+  .shopee-banner {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .shopee-nav {
+    flex: 0 0 auto;
+    width: 44px;
+    align-self: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text);
+    font-size: 1.3rem;
+    line-height: 1;
+    height: 44px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .shopee-nav:hover { border-color: var(--gold); transform: translateY(-1px); }
+  .shopee-slide {
+    flex: 1 1 auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-m);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    min-height: 128px;
+  }
+  .shopee-slide .shopee-icon {
+    flex: 0 0 auto;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: linear-gradient(120deg, var(--gold-deep) 0%, var(--gold) 20%, var(--gold-shine) 48%, var(--gold) 76%, var(--gold-deep) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+  }
+  .shopee-slide .shopee-info { flex: 1 1 auto; min-width: 0; }
+  .shopee-slide h3 {
+    font-family: var(--font-body);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 6px;
+  }
+  .shopee-slide p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin: 0 0 14px;
+    max-width: 60ch;
+  }
+  .shopee-slide .btn { padding: 10px 20px; font-size: 0.84rem; }
+  .shopee-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .shopee-dots button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .shopee-dots button[aria-current="true"] { background: var(--gold); }
+  .shopee-disclosure { margin-top: 18px; font-size: 0.76rem; color: var(--text-muted); max-width: 70ch; }
+  @media (max-width: 640px) {
+    .shopee-slide { flex-direction: column; text-align: center; padding: 24px; }
+    .shopee-nav { display: none; }
+  }
+
   /* ---------- CREDENTIAL BAR ---------- */
   .credbar {
     background: var(--surface-2);
@@ -1189,6 +1271,7 @@
       { title: 'Depoimentos', desc: 'Avaliações reais de pacientes no Google', tags: 'depoimentos avaliacoes reviews opinioes', anchor: '#depoimentos' },
       { title: 'Blog e Artigos', desc: 'Conteúdo educativo com fontes científicas', tags: 'blog artigos dicas alimentacao mito sono proteina longevidade', anchor: '#artigos' },
       { title: 'Receitas em Vídeo', desc: 'Vídeos de receitas low carb no YouTube', tags: 'receitas videos youtube low carb dicas alimentacao cozinhar', anchor: '#receitas' },
+      { title: 'Dicas de Compras', desc: 'Produtos de cozinha, cuidados pessoais e suplementação', tags: 'dicas de compras produtos shopee panela frigideira ceramica omeleteira marmiteira lancheira fitness desodorante sem aluminio pasta de dente sem fluor filtro de chuveiro cloro azul de metileno lugol iodo', anchor: '#dicas-compras' },
       { title: 'Personal Parceiro por Região', desc: 'Profissionais de educação física parceiros', tags: 'personal treino academia educacao fisica musculacao treinador parceiro regiao cidade', anchor: '#treino' },
       { title: 'Resultados no Instagram', desc: 'Bastidores e rotina de treino', tags: 'resultados instagram treino rotina', anchor: '#resultados' },
       { title: 'Parceiros', desc: 'Rede de confiança e parcerias', tags: 'parceiros parceria rede confianca', anchor: '#parceiros' },
@@ -1912,6 +1995,92 @@
     <p class="receitas-nota">Mais receitas em breve, incluindo uma seleção em parceria com a Luana Wellness FitCheff Gourmet.</p>
   </div>
 </section>
+
+<section id="dicas-compras">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Dicas de Compras</div>
+      <h2>Produtos pra rotina de quem cuida da saúde</h2>
+      <p>Seleção de itens de cozinha, cuidados pessoais e suplementação que reforçam o que é trabalhado em consulta. Os links abaixo são de afiliado — comprar por eles não custa nada a mais pra você.</p>
+    </div>
+    <div class="shopee-banner">
+      <button class="shopee-nav shopee-prev" id="shopee-prev" type="button" aria-label="Produto anterior">‹</button>
+      <div class="shopee-slide" id="shopee-slide" aria-live="polite"></div>
+      <button class="shopee-nav shopee-next" id="shopee-next" type="button" aria-label="Próximo produto">›</button>
+    </div>
+    <div class="shopee-dots" id="shopee-dots"></div>
+    <p class="shopee-disclosure">Links de afiliado (Mercado Livre e Shopee): ao comprar por eles, o consultório pode receber uma pequena comissão, sem custo extra pra você. São sugestões de produto, não prescrição — use conforme orientação profissional quando aplicável (especialmente azul de metileno e Lugol).</p>
+  </div>
+</section>
+
+<script>
+  (function () {
+    // TODO: os 3 últimos itens (filtro de chuveiro, azul de metileno, Lugol)
+    // ainda usam link de busca genérica da Shopee — NÃO geram comissão.
+    // Pra virar afiliado real: app Shopee Afiliados / Portal de Criadores,
+    // priorizando sempre comissão % e nº de vendas de cada produto.
+    // Os 7 primeiros já usam link de afiliado real do Mercado Livre
+    // (Central de Afiliados e Criadores, etiqueta gofe2967841).
+    var PRODUTOS_RECOMENDADOS = [
+      { emoji: '🍳', nome: 'Jogo de Panelas de Cerâmica', blurb: 'Antiaderente sem PTFE/PFOA, pra reduzir a exposição a químicos no preparo das refeições.', link: 'https://meli.la/1TUSHHz', loja: 'Mercado Livre' },
+      { emoji: '🥘', nome: 'Frigideira de Cerâmica', blurb: 'Antiaderente natural, cozinha com bem menos óleo no dia a dia.', link: 'https://meli.la/239peDC', loja: 'Mercado Livre' },
+      { emoji: '🍳', nome: 'Omeleteira Elétrica', blurb: 'Café da manhã proteico rápido, sem sujar a cozinha toda.', link: 'https://meli.la/2fuP4ri', loja: 'Mercado Livre' },
+      { emoji: '🍱', nome: 'Marmiteira com Aquecimento Elétrico', blurb: 'Esquenta a marmita na hora, direto na mesa do trabalho.', link: 'https://meli.la/2y91oAA', loja: 'Mercado Livre' },
+      { emoji: '🎒', nome: 'Lancheira/Marmiteira Fitness', blurb: 'Divisórias pra organizar as refeições do dia sem misturar tudo.', link: 'https://meli.la/2snHmX6', loja: 'Mercado Livre' },
+      { emoji: '🧴', nome: 'Desodorante sem Alumínio', blurb: 'Opção pra quem busca reduzir a exposição a sais de alumínio.', link: 'https://meli.la/l5teebz', loja: 'Mercado Livre' },
+      { emoji: '🦷', nome: 'Pasta de Dente sem Flúor', blurb: 'Alternativa natural pra higiene bucal do dia a dia.', link: 'https://meli.la/2aFRFkR', loja: 'Mercado Livre' },
+      { emoji: '🚿', nome: 'Filtro de Chuveiro de 20 Camadas', blurb: 'Sistema multicamadas que reduz cloro, metais pesados e sedimentos da água do banho.', link: 'https://shopee.com.br/search?keyword=filtro%20de%20chuveiro%2020%20camadas', loja: 'Shopee' },
+      { emoji: '💊', nome: 'Azul de Metileno P.A.', blurb: 'Grau analítico. Uso apenas com orientação de profissional de saúde.', link: 'https://shopee.com.br/search?keyword=azul%20de%20metileno%20p.a.', loja: 'Shopee' },
+      { emoji: '💧', nome: 'Lugol (Solução de Iodo)', blurb: 'Reposição de iodo. Dose e uso sempre orientados por profissional.', link: 'https://shopee.com.br/search?keyword=lugol%20solucao%20de%20iodo', loja: 'Shopee' }
+    ];
+
+    var ordem = PRODUTOS_RECOMENDADOS.map(function (_, i) { return i; });
+    for (var i = ordem.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = ordem[i]; ordem[i] = ordem[j]; ordem[j] = tmp;
+    }
+
+    var slideEl = document.getElementById('shopee-slide');
+    var dotsEl = document.getElementById('shopee-dots');
+    var atual = 0;
+    var timer = null;
+
+    function render() {
+      var p = PRODUTOS_RECOMENDADOS[ordem[atual]];
+      slideEl.innerHTML =
+        '<span class="shopee-icon" aria-hidden="true">' + p.emoji + '</span>' +
+        '<div class="shopee-info">' +
+          '<h3>' + p.nome + '</h3>' +
+          '<p>' + p.blurb + '</p>' +
+          '<a class="btn btn-primary" href="' + p.link + '" target="_blank" rel="noopener sponsored nofollow">Ver n' + (p.loja === 'Shopee' ? 'a' : 'o') + ' ' + p.loja + ' →</a>' +
+        '</div>';
+      Array.prototype.forEach.call(dotsEl.children, function (dot, idx) {
+        dot.setAttribute('aria-current', idx === atual ? 'true' : 'false');
+      });
+    }
+
+    ordem.forEach(function (_, idx) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', 'Ir pro produto ' + (idx + 1));
+      dot.addEventListener('click', function () { atual = idx; render(); reiniciarAutoplay(); });
+      dotsEl.appendChild(dot);
+    });
+
+    function avancar() { atual = (atual + 1) % ordem.length; render(); }
+    function voltar() { atual = (atual - 1 + ordem.length) % ordem.length; render(); }
+    function reiniciarAutoplay() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(avancar, 6000);
+    }
+
+    document.getElementById('shopee-next').addEventListener('click', function () { avancar(); reiniciarAutoplay(); });
+    document.getElementById('shopee-prev').addEventListener('click', function () { voltar(); reiniciarAutoplay(); });
+
+    render();
+    reiniciarAutoplay();
+  })();
+</script>
 
 <section id="local">
   <div class="wrap">
