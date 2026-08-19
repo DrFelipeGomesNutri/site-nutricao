@@ -971,6 +971,25 @@
     justify-content: center;
     font-size: 1.7rem;
   }
+  .shopee-slide .shopee-photo {
+    flex: 0 0 auto;
+    width: 88px;
+    height: 88px;
+    border-radius: var(--radius-m);
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .shopee-slide .shopee-photo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+  }
   .shopee-slide .shopee-info { flex: 1 1 auto; min-width: 0; }
   .shopee-slide h3 {
     font-family: var(--font-body);
@@ -2022,13 +2041,13 @@
     // Os 7 primeiros já usam link de afiliado real do Mercado Livre
     // (Central de Afiliados e Criadores, etiqueta gofe2967841).
     var PRODUTOS_RECOMENDADOS = [
-      { emoji: '🍳', nome: 'Jogo de Panelas de Cerâmica', blurb: 'Antiaderente sem PTFE/PFOA, pra reduzir a exposição a químicos no preparo das refeições.', link: 'https://meli.la/1TUSHHz', loja: 'Mercado Livre' },
-      { emoji: '🥘', nome: 'Frigideira de Cerâmica', blurb: 'Antiaderente natural, cozinha com bem menos óleo no dia a dia.', link: 'https://meli.la/239peDC', loja: 'Mercado Livre' },
-      { emoji: '🍳', nome: 'Omeleteira Elétrica', blurb: 'Café da manhã proteico rápido, sem sujar a cozinha toda.', link: 'https://meli.la/2fuP4ri', loja: 'Mercado Livre' },
-      { emoji: '🍱', nome: 'Marmiteira com Aquecimento Elétrico', blurb: 'Esquenta a marmita na hora, direto na mesa do trabalho.', link: 'https://meli.la/2y91oAA', loja: 'Mercado Livre' },
-      { emoji: '🎒', nome: 'Lancheira/Marmiteira Fitness', blurb: 'Divisórias pra organizar as refeições do dia sem misturar tudo.', link: 'https://meli.la/2snHmX6', loja: 'Mercado Livre' },
-      { emoji: '🧴', nome: 'Desodorante sem Alumínio', blurb: 'Opção pra quem busca reduzir a exposição a sais de alumínio.', link: 'https://meli.la/l5teebz', loja: 'Mercado Livre' },
-      { emoji: '🦷', nome: 'Pasta de Dente sem Flúor', blurb: 'Alternativa natural pra higiene bucal do dia a dia.', link: 'https://meli.la/2aFRFkR', loja: 'Mercado Livre' },
+      { emoji: '🍳', nome: 'Jogo de Panelas de Cerâmica', blurb: 'Antiaderente sem PTFE/PFOA, pra reduzir a exposição a químicos no preparo das refeições.', link: 'https://meli.la/1TUSHHz', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_926181-MLA106965198532_022026-O.webp' },
+      { emoji: '🥘', nome: 'Frigideira de Cerâmica', blurb: 'Antiaderente natural, cozinha com bem menos óleo no dia a dia.', link: 'https://meli.la/239peDC', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_976418-MLA106813671781_022026-O.webp' },
+      { emoji: '🍳', nome: 'Omeleteira Elétrica', blurb: 'Café da manhã proteico rápido, sem sujar a cozinha toda.', link: 'https://meli.la/2fuP4ri', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_825150-MLA99449654548_112025-O.webp' },
+      { emoji: '🍱', nome: 'Marmiteira com Aquecimento Elétrico', blurb: 'Esquenta a marmita na hora, direto na mesa do trabalho.', link: 'https://meli.la/2y91oAA', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_875155-MLA98891038507_112025-O.webp' },
+      { emoji: '🎒', nome: 'Lancheira/Marmiteira Fitness', blurb: 'Divisórias pra organizar as refeições do dia sem misturar tudo.', link: 'https://meli.la/2snHmX6', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_687195-MLA113406769010_072026-O.webp' },
+      { emoji: '🧴', nome: 'Desodorante sem Alumínio', blurb: 'Opção pra quem busca reduzir a exposição a sais de alumínio.', link: 'https://meli.la/l5teebz', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_857138-MLB110769370258_052026-O-divora-desodorante-pedra-cristal-vegano-divora-60g-stick.webp' },
+      { emoji: '🦷', nome: 'Pasta de Dente sem Flúor', blurb: 'Alternativa natural pra higiene bucal do dia a dia.', link: 'https://meli.la/2aFRFkR', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_909726-MLB89938958435_082025-O-pasta-de-dente-creme-dental-ozonizado-sem-fluor-natural.webp' },
       { emoji: '🚿', nome: 'Filtro de Chuveiro de 20 Camadas', blurb: 'Sistema multicamadas que reduz cloro, metais pesados e sedimentos da água do banho.', link: 'https://shopee.com.br/search?keyword=filtro%20de%20chuveiro%2020%20camadas', loja: 'Shopee' },
       { emoji: '💊', nome: 'Azul de Metileno P.A.', blurb: 'Grau analítico. Uso apenas com orientação de profissional de saúde.', link: 'https://shopee.com.br/search?keyword=azul%20de%20metileno%20p.a.', loja: 'Shopee' },
       { emoji: '💧', nome: 'Lugol (Solução de Iodo)', blurb: 'Reposição de iodo. Dose e uso sempre orientados por profissional.', link: 'https://shopee.com.br/search?keyword=lugol%20solucao%20de%20iodo', loja: 'Shopee' }
@@ -2047,8 +2066,11 @@
 
     function render() {
       var p = PRODUTOS_RECOMENDADOS[ordem[atual]];
+      var foto = p.img
+        ? '<span class="shopee-photo"><img src="' + p.img + '" alt="' + p.nome + '" loading="lazy"></span>'
+        : '<span class="shopee-icon" aria-hidden="true">' + p.emoji + '</span>';
       slideEl.innerHTML =
-        '<span class="shopee-icon" aria-hidden="true">' + p.emoji + '</span>' +
+        foto +
         '<div class="shopee-info">' +
           '<h3>' + p.nome + '</h3>' +
           '<p>' + p.blurb + '</p>' +
@@ -2180,8 +2202,6 @@
     <a href="https://instagram.com/Lipegomestreinador" target="_blank" rel="noopener">@Lipegomestreinador (resultados)</a>
     &nbsp;·&nbsp;
     <a href="https://www.google.com/maps/search/?api=1&query=Felipe+Gomes+Nutricionista+Asa+Sul+Brasilia" target="_blank" rel="noopener">★ 5,0 no Google (249 avaliações)</a>
-    <br /><br />
-    <span style="font-size:0.72rem; opacity:0.75;">Este site não promove marcas de alimentos, suplementos ou produtos, e não possui conflito de interesse a declarar.</span>
   </div>
 </footer>
 
