@@ -782,6 +782,20 @@
     transition: transform 0.2s ease;
   }
   .artigo[open] summary .plus { transform: rotate(45deg); }
+  .artigo.artigo-destaque-dia {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--gold) 35%, transparent);
+  }
+  .destaque-dia-badge {
+    background: linear-gradient(120deg, var(--gold-deep) 0%, var(--gold) 20%, var(--gold-shine) 48%, var(--gold) 76%, var(--gold-deep) 100%);
+    color: #1a1204;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 7px 20px;
+  }
   .artigo-body {
     padding: 0 24px 26px;
     color: var(--text-muted);
@@ -2143,6 +2157,40 @@
         });
       });
     });
+  })();
+</script>
+
+<script>
+  (function () {
+    // Escolhe um artigo diferente como "destaque do dia" automaticamente,
+    // com base na data de hoje — roda no navegador, sem precisar de nenhuma
+    // automação externa. Muda sozinho todo dia, pra sempre.
+    var grid = document.getElementById('artigos-grid');
+    if (!grid) return;
+
+    var artigos = Array.prototype.filter.call(grid.children, function (el) {
+      return el.tagName === 'DETAILS' && el.classList.contains('artigo');
+    });
+    if (artigos.length === 0) return;
+
+    var hoje = new Date();
+    var inicioAno = new Date(hoje.getFullYear(), 0, 0);
+    var diaDoAno = Math.floor((hoje - inicioAno) / 86400000);
+    var destaque = artigos[diaDoAno % artigos.length];
+
+    var faixa = document.createElement('div');
+    faixa.className = 'destaque-dia-badge';
+    faixa.textContent = '🔥 Destaque de hoje';
+    destaque.insertBefore(faixa, destaque.firstChild);
+    destaque.classList.add('artigo-destaque-dia');
+    destaque.open = true;
+
+    var alerta = grid.querySelector('.artigo-alerta');
+    if (alerta) {
+      grid.insertBefore(destaque, alerta.nextSibling);
+    } else {
+      grid.insertBefore(destaque, grid.firstElementChild);
+    }
   })();
 </script>
 
