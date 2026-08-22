@@ -2323,7 +2323,7 @@
     // ainda usam link de busca genérica da Shopee — NÃO geram comissão.
     // Pra virar afiliado real: app Shopee Afiliados / Portal de Criadores,
     // priorizando sempre comissão % e nº de vendas de cada produto.
-    // Os 7 primeiros já usam link de afiliado real do Mercado Livre
+    // Os demais itens já usam link de afiliado real do Mercado Livre
     // (Central de Afiliados e Criadores, etiqueta gofe2967841).
     var PRODUTOS_RECOMENDADOS = [
       { emoji: '🍳', nome: 'Jogo de Panelas de Cerâmica', blurb: 'Antiaderente sem PTFE/PFOA, pra reduzir a exposição a químicos no preparo das refeições.', link: 'https://meli.la/1TUSHHz', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_926181-MLA106965198532_022026-O.webp' },
@@ -2331,8 +2331,12 @@
       { emoji: '🍳', nome: 'Omeleteira Elétrica', blurb: 'Café da manhã proteico rápido, sem sujar a cozinha toda.', link: 'https://meli.la/2fuP4ri', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_825150-MLA99449654548_112025-O.webp' },
       { emoji: '🍱', nome: 'Marmiteira com Aquecimento Elétrico', blurb: 'Esquenta a marmita na hora, direto na mesa do trabalho.', link: 'https://meli.la/2y91oAA', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_875155-MLA98891038507_112025-O.webp' },
       { emoji: '🎒', nome: 'Lancheira/Marmiteira Fitness', blurb: 'Divisórias pra organizar as refeições do dia sem misturar tudo.', link: 'https://meli.la/2snHmX6', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_687195-MLA113406769010_072026-O.webp' },
-      { emoji: '🧴', nome: 'Desodorante sem Alumínio', blurb: 'Opção pra quem busca reduzir a exposição a sais de alumínio.', link: 'https://meli.la/l5teebz', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_857138-MLB110769370258_052026-O-divora-desodorante-pedra-cristal-vegano-divora-60g-stick.webp' },
-      { emoji: '🦷', nome: 'Pasta de Dente sem Flúor', blurb: 'Alternativa natural pra higiene bucal do dia a dia.', link: 'https://meli.la/2aFRFkR', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_909726-MLB89938958435_082025-O-pasta-de-dente-creme-dental-ozonizado-sem-fluor-natural.webp' },
+      { emoji: '🧴', nome: 'Desodorante sem Alumínio — Pedra Cristal', blurb: 'Opção pra quem busca reduzir a exposição a sais de alumínio.', link: 'https://meli.la/l5teebz', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_857138-MLB110769370258_052026-O-divora-desodorante-pedra-cristal-vegano-divora-60g-stick.webp' },
+      { emoji: '🧴', nome: 'Desodorante sem Alumínio — Medoosi', blurb: 'Pedra de cristal 100% natural, outra opção sem sais de alumínio.', link: 'https://meli.la/1T2Jpf9', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_609768-MLA114281518057_072026-O.webp' },
+      { emoji: '🧴', nome: 'Desodorante sem Alumínio — True Paleo', blurb: '100% natural, fragrância de lavanda, sem sais de alumínio.', link: 'https://meli.la/22Urd8P', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_656510-MLA111117479315_052026-O.webp' },
+      { emoji: '🦷', nome: 'Pasta de Dente sem Flúor — Ozoncare', blurb: 'Alternativa natural pra higiene bucal do dia a dia.', link: 'https://meli.la/2aFRFkR', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_909726-MLB89938958435_082025-O-pasta-de-dente-creme-dental-ozonizado-sem-fluor-natural.webp' },
+      { emoji: '🦷', nome: 'Pasta de Dente sem Flúor — Boni Natural', blurb: 'Menta e melaleuca, outra opção natural pra higiene bucal.', link: 'https://meli.la/23vEomW', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_702247-MLA107082675059_022026-O.webp' },
+      { emoji: '🦷', nome: 'Pasta de Dente sem Flúor — Kit 2un Boni Natural', blurb: 'Mesma linha natural, kit com 2 unidades pra render mais.', link: 'https://meli.la/239H2UV', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_820592-MLA106660654885_022026-O.webp' },
       { emoji: '🚿', nome: 'Filtro de Chuveiro de 20 Camadas', blurb: 'Sistema multicamadas que reduz cloro, metais pesados e sedimentos da água do banho.', link: 'https://shopee.com.br/search?keyword=filtro%20de%20chuveiro%2020%20camadas', loja: 'Shopee' },
       { emoji: '💊', nome: 'Azul de Metileno P.A.', blurb: 'Grau analítico. Uso apenas com orientação de profissional de saúde.', link: 'https://shopee.com.br/search?keyword=azul%20de%20metileno%20p.a.', loja: 'Shopee' },
       { emoji: '💧', nome: 'Lugol (Solução de Iodo)', blurb: 'Reposição de iodo. Dose e uso sempre orientados por profissional.', link: 'https://shopee.com.br/search?keyword=lugol%20solucao%20de%20iodo', loja: 'Shopee' }
@@ -2530,3 +2534,4 @@
     <a href="https://www.google.com/maps/search/?api=1&query=Felipe+Gomes+Nutricionista+Asa+Sul+Brasilia" target="_blank" rel="noopener">★ 5,0 no Google (250 avaliações)</a>
   </div>
 </footer>
+
