@@ -701,6 +701,59 @@
     .depoimentos-grid { grid-template-columns: 1fr; }
   }
 
+  /* ---------- RESULTADOS REAIS (pacientes) ---------- */
+  .resultados-reais { background: var(--surface); }
+  .resultados-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .resultado-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+  }
+  .resultado-photo { position: relative; }
+  .resultado-photo img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+    filter: saturate(1.02);
+  }
+  .resultado-idade-tag {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(10,20,32,0.72);
+    color: #fff;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    padding: 5px 11px;
+    border-radius: 999px;
+    border: 1px solid rgba(212,175,55,0.55);
+  }
+  .resultado-info { padding: 20px 22px 24px; }
+  .resultado-info h3 { margin: 0 0 12px; font-size: 1.15rem; color: var(--text); }
+  .resultado-info h3 .eyebrow-nome { display: block; font-size: 0.78rem; font-weight: 400; color: var(--gold); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+  .resultado-info ul { margin: 0; padding-left: 18px; color: var(--text); font-size: 0.92rem; line-height: 1.6; }
+  .resultado-info li { margin-bottom: 4px; }
+  .resultados-reais .disclaimer-box {
+    background: var(--surface-2);
+    border-radius: var(--radius-s);
+    padding: 12px 14px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  @media (max-width: 860px) {
+    .resultados-grid { grid-template-columns: 1fr; }
+  }
+
   /* ---------- RESULTADOS ---------- */
   .resultados {
     background: var(--navy);
@@ -1969,6 +2022,7 @@
       <button class="blog-filtro-btn" type="button" data-filtro="mito" aria-pressed="false">Mito vs. Fato</button>
       <button class="blog-filtro-btn" type="button" data-filtro="neuro" aria-pressed="false">Neuro-Autoimune</button>
       <button class="blog-filtro-btn" type="button" data-filtro="longevidade" aria-pressed="false">Longevidade</button>
+      <button class="blog-filtro-btn" type="button" data-filtro="metais" aria-pressed="false">Metais Pesados</button>
     </div>
     <div class="artigos-grid" id="artigos-grid">
       <div class="artigo-alerta" data-categoria="alertas emagrecimento">
@@ -2351,6 +2405,47 @@
       <div class="parceiro-slot">Espaço reservado</div>
       <div class="parceiro-slot">Espaço reservado</div>
     </div>
+  </div>
+</section>
+
+<section class="resultados-reais" id="resultados-reais">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Resultados acompanhados de perto</div>
+      <h2 style="font-size:1.6rem;">Pacientes reais, em fases diferentes da vida</h2>
+      <p>Evolução clínica acompanhada por exames ao longo do tratamento — cada organismo responde de um jeito.</p>
+    </div>
+    <div class="resultados-grid">
+      <div class="resultado-card">
+        <div class="resultado-photo">
+          <img src="paciente-maria-73.jpg" alt="Maria, 73 anos, paciente em acompanhamento nutricional com Dr. Felipe Gomes" loading="lazy">
+          <span class="resultado-idade-tag">73 anos</span>
+        </div>
+        <div class="resultado-info">
+          <h3><span class="eyebrow-nome">Paciente</span>Maria</h3>
+          <ul>
+            <li>Melhora do desconforto intestinal</li>
+            <li>Sono mais tranquilo</li>
+            <li>Mais disposição e mais ativa no dia a dia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resultado-card">
+        <div class="resultado-photo">
+          <img src="paciente-marco-62.jpg" alt="Marco, 62 anos, paciente em acompanhamento nutricional com Dr. Felipe Gomes" loading="lazy">
+          <span class="resultado-idade-tag">62 anos</span>
+        </div>
+        <div class="resultado-info">
+          <h3><span class="eyebrow-nome">Paciente</span>Marco</h3>
+          <ul>
+            <li>Mais vigor físico e mais disposição para o trabalho</li>
+            <li>Sono mais tranquilo e aumento da resistência</li>
+            <li>Glicemia e outros marcadores em regulação natural</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer-box" style="margin-top:20px;">Resultados individuais, acompanhados por exames laboratoriais ao longo do tratamento. As respostas variam de pessoa para pessoa.</div>
   </div>
 </section>
 
