@@ -628,6 +628,61 @@
   .metais-tips ul { margin: 0; padding-left: 20px; color: var(--text-muted); font-size: 0.9rem; }
   .metais-tips li { margin-bottom: 10px; }
   .metais-tips li:last-child { margin-bottom: 0; }
+  .metais-produtos { margin-top: 20px; }
+  .metais-produtos > strong {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+  .metais-produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .metais-produto-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-m);
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .metais-produto-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .metais-produto-card .mp-photo {
+    flex: 0 0 auto;
+    width: 72px;
+    height: 72px;
+    border-radius: var(--radius-s);
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .metais-produto-card .mp-photo img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  .metais-produto-card .mp-info { min-width: 0; }
+  .metais-produto-card h5 {
+    font-family: var(--font-body);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 4px;
+  }
+  .metais-produto-card p { font-size: 0.79rem; color: var(--text-muted); margin: 0; }
+  .metais-produto-card .mp-cta { display: block; margin-top: 6px; font-size: 0.78rem; font-weight: 700; color: var(--gold); }
+  @media (max-width: 640px) {
+    .metais-produtos-grid { grid-template-columns: 1fr; }
+  }
   .nutrientes-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1727,14 +1782,29 @@
           <div class="n-falta"><span class="n-label">Se faltar</span><p>Fadiga, confusão mental e, em casos graves, beribéri.</p></div>
         </div>
         <div class="nutriente-card">
+          <h4>Vitamina B2 (Riboflavina)</h4>
+          <div class="n-papel"><span class="n-label">Papel no organismo</span><p>Metabolismo energético, saúde da pele e da córnea, e ativação de outras vitaminas do complexo B.</p></div>
+          <div class="n-falta"><span class="n-label">Se faltar</span><p>Rachaduras nos cantos da boca, inflamação da língua e maior sensibilidade à luz.</p></div>
+        </div>
+        <div class="nutriente-card">
           <h4>Vitamina B3 (Niacina)</h4>
           <div class="n-papel"><span class="n-label">Papel no organismo</span><p>Metabolismo energético e saúde da pele.</p></div>
           <div class="n-falta"><span class="n-label">Se faltar</span><p>Dermatite, alterações digestivas e, em casos graves, pelagra.</p></div>
         </div>
         <div class="nutriente-card">
+          <h4>Vitamina B5 (Ácido Pantotênico)</h4>
+          <div class="n-papel"><span class="n-label">Papel no organismo</span><p>Síntese da coenzima A, peça central no metabolismo de carboidratos, gorduras e proteínas.</p></div>
+          <div class="n-falta"><span class="n-label">Se faltar</span><p>Rara — está presente em quase todos os alimentos; quando ocorre, causa fadiga e formigamento nas mãos e pés.</p></div>
+        </div>
+        <div class="nutriente-card">
           <h4>Vitamina B6</h4>
           <div class="n-papel"><span class="n-label">Papel no organismo</span><p>Metabolismo de aminoácidos e produção de neurotransmissores (como serotonina).</p></div>
           <div class="n-falta"><span class="n-label">Se faltar</span><p>Irritabilidade, alterações de humor e anemia.</p></div>
+        </div>
+        <div class="nutriente-card">
+          <h4>Vitamina B7 (Biotina)</h4>
+          <div class="n-papel"><span class="n-label">Papel no organismo</span><p>Metabolismo de gorduras e carboidratos, e síntese de queratina — ligada à saúde de pele, cabelo e unhas.</p></div>
+          <div class="n-falta"><span class="n-label">Se faltar</span><p>Rara; casos graves (ex. consumo excessivo de clara de ovo crua por longos períodos) causam dermatite e queda de cabelo.</p></div>
         </div>
         <div class="nutriente-card">
           <h4>Vitamina B12</h4>
@@ -1794,6 +1864,16 @@
           <h4>Manganês</h4>
           <div class="n-papel"><span class="n-label">Papel no organismo</span><p>Metabolismo ósseo, de carboidratos e função antioxidante.</p></div>
           <div class="n-falta"><span class="n-label">Se faltar</span><p>Rara; quando ocorre, associada a fragilidade óssea.</p></div>
+        </div>
+        <div class="nutriente-card">
+          <h4>Molibdênio</h4>
+          <div class="n-papel"><span class="n-label">Papel no organismo</span><p>Cofator de enzimas envolvidas na metabolização de sulfitos e purinas, incluindo a degradação do ácido úrico.</p></div>
+          <div class="n-falta"><span class="n-label">Se faltar</span><p>Extremamente rara com alimentação variada; descrita quase só em nutrição parenteral prolongada.</p></div>
+        </div>
+        <div class="nutriente-card">
+          <h4>Cromo</h4>
+          <div class="n-papel"><span class="n-label">Papel no organismo</span><p>Participa da ação da insulina e do metabolismo de carboidratos e gorduras.</p></div>
+          <div class="n-falta"><span class="n-label">Se faltar</span><p>Rara; quando ocorre, associada a alterações na tolerância à glicose.</p></div>
         </div>
       </div>
     </div>
@@ -1860,6 +1940,28 @@
           <li><strong>Vegetais crucíferos</strong> (brócolis, couve, repolho): o sulforafano presente neles comprovadamente aumenta a capacidade do fígado de eliminar poluentes ambientais — em estudo com humanos, o consumo de brócolis aumentou a excreção de benzeno em 61%¹.</li>
           <li><strong>Hidratação adequada</strong> apoia a função renal na excreção de toxinas.</li>
         </ul>
+        <div class="metais-produtos">
+          <strong>Dica prática pra reduzir exposição a alumínio na cozinha</strong>
+          <div class="metais-produtos-grid">
+            <a class="metais-produto-card" href="https://meli.la/239peDC" target="_blank" rel="noopener sponsored nofollow">
+              <span class="mp-photo"><img src="https://http2.mlstatic.com/D_NQ_NP_976418-MLA106813671781_022026-O.webp" alt="Frigideira de cerâmica antiaderente" loading="lazy"></span>
+              <span class="mp-info">
+                <h5>Frigideira de Cerâmica</h5>
+                <p>Antiaderente, sem alumínio exposto ao alimento — reduz a migração do metal durante o preparo, principalmente com comida ácida e quente.</p>
+                <span class="mp-cta">Ver no Mercado Livre →</span>
+              </span>
+            </a>
+            <a class="metais-produto-card" href="https://meli.la/1TUSHHz" target="_blank" rel="noopener sponsored nofollow">
+              <span class="mp-photo"><img src="https://http2.mlstatic.com/D_NQ_NP_926181-MLA106965198532_022026-O.webp" alt="Jogo de panelas de cerâmica" loading="lazy"></span>
+              <span class="mp-info">
+                <h5>Jogo de Panelas de Cerâmica</h5>
+                <p>Substitui panelas de alumínio sem revestimento no uso diário — mesma lógica de reduzir a exposição na fonte.</p>
+                <span class="mp-cta">Ver no Mercado Livre →</span>
+              </span>
+            </a>
+          </div>
+          <p style="margin-top:12px;font-size:0.76rem;color:var(--text-muted);">Link de afiliado (Mercado Livre) — comprar por ele não custa nada a mais pra você.</p>
+        </div>
         <div class="disclaimer-box" style="margin-top:14px;">Isso é diferente de "quelação" — tratamento médico usado só em casos de intoxicação confirmada por exame, feito exclusivamente por médico. Suplementos vendidos como "detox de metais pesados" (clorela, zeólita, argila) não têm evidência forte o suficiente pra essa finalidade. Se você suspeita de exposição real a metais pesados, o caminho é exame de sangue/urina e avaliação médica — não um protocolo por conta própria.</div>
         <div class="fontes">
           <strong>Fontes</strong>
