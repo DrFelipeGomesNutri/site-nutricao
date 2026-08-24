@@ -518,6 +518,19 @@
   .personal-card:hover { border-color: var(--gold); transform: translateY(-2px); }
   .personal-card-photo { aspect-ratio: 4 / 3; overflow: hidden; background: var(--surface-2); }
   .personal-card-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .personal-card-photo-placeholder {
+    aspect-ratio: 4 / 3;
+    background: var(--surface-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 12px;
+  }
   .personal-card-body { padding: 18px 20px 20px; }
   .personal-card-body .eyebrow { display: block; margin-bottom: 4px; }
   .personal-card-body h3 {
@@ -529,11 +542,46 @@
     color: var(--text);
     margin: 0 0 4px;
   }
+  .personal-card-publico { font-size: 0.78rem; color: var(--text-muted); font-weight: 700; margin-bottom: 2px; }
   .personal-card-cidades { font-size: 0.76rem; color: var(--gold); font-weight: 700; margin-bottom: 8px; }
   .personal-card-bio { font-size: 0.86rem; color: var(--text-muted); margin: 0 0 14px; }
   .personal-card-links { display: flex; gap: 14px; flex-wrap: wrap; }
   .personal-card-links a { font-size: 0.82rem; font-weight: 700; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px; }
   .personal-card-links a:hover { color: var(--gold); border-color: var(--gold); }
+  .personal-card-links .sem-contato { font-size: 0.78rem; color: var(--text-muted); }
+  .personal-filtros { margin-top: 28px; }
+  .personal-filtros-group { margin-bottom: 14px; }
+  .personal-filtros-group:last-child { margin-bottom: 0; }
+  .personal-filtros-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .personal-filtros-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .personal-filtro-btn {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  }
+  .personal-filtro-btn:hover { border-color: var(--gold); color: var(--text); }
+  .personal-filtro-btn[aria-pressed="true"] {
+    background: linear-gradient(120deg, var(--gold-deep) 0%, var(--gold) 20%, var(--gold-shine) 48%, var(--gold) 76%, var(--gold-deep) 100%);
+    color: #1a1204;
+    border-color: transparent;
+  }
+  .personal-card[hidden] { display: none; }
+  .personal-empty { margin-top: 20px; color: var(--text-muted); font-size: 0.9rem; text-align: center; }
   @media (max-width: 860px) {
     .personal-grid { grid-template-columns: repeat(2, 1fr); }
   }
@@ -2098,15 +2146,117 @@
     <div class="section-head" style="margin-top:48px; margin-bottom:0;">
       <div class="eyebrow">Rede de treino</div>
       <h2 style="font-size:1.4rem;">Personal Parceiro por Região</h2>
-      <p>Profissionais de educação física parceiros, organizados por cidade — pra quem quer unir o acompanhamento nutricional a treino presencial com alguém de confiança perto de você.</p>
+      <p>Profissionais de educação física parceiros — pra quem quer unir o acompanhamento nutricional a treino presencial com alguém de confiança perto de você. Filtre por região e por público de atendimento.</p>
     </div>
-    <div class="personal-grid">
-      <div class="personal-slot">Em breve</div>
-      <div class="personal-slot">Em breve</div>
-      <div class="personal-slot">Em breve</div>
+    <div class="personal-filtros">
+      <div class="personal-filtros-group">
+        <span class="personal-filtros-label">Região de atendimento</span>
+        <div class="personal-filtros-row" id="personal-filtro-regiao" role="group" aria-label="Filtrar por região">
+          <button class="personal-filtro-btn" type="button" data-regiao="todas" aria-pressed="true">Todas</button>
+          <button class="personal-filtro-btn" type="button" data-regiao="plano-piloto" aria-pressed="false">Plano Piloto</button>
+          <button class="personal-filtro-btn" type="button" data-regiao="taguatinga" aria-pressed="false">Taguatinga</button>
+          <button class="personal-filtro-btn" type="button" data-regiao="aguas-claras" aria-pressed="false">Águas Claras</button>
+          <button class="personal-filtro-btn" type="button" data-regiao="ceilandia" aria-pressed="false">Ceilândia</button>
+          <button class="personal-filtro-btn" type="button" data-regiao="guara" aria-pressed="false">Guará</button>
+          <button class="personal-filtro-btn" type="button" data-regiao="samambaia" aria-pressed="false">Samambaia</button>
+          <button class="personal-filtro-btn" type="button" data-regiao="sudoeste" aria-pressed="false">Sudoeste</button>
+          <button class="personal-filtro-btn" type="button" data-regiao="noroeste" aria-pressed="false">Noroeste</button>
+          <button class="personal-filtro-btn" type="button" data-regiao="online" aria-pressed="false">Online</button>
+        </div>
+      </div>
+      <div class="personal-filtros-group">
+        <span class="personal-filtros-label">Público de atendimento</span>
+        <div class="personal-filtros-row" id="personal-filtro-publico" role="group" aria-label="Filtrar por público">
+          <button class="personal-filtro-btn" type="button" data-publico="todos" aria-pressed="true">Todos</button>
+          <button class="personal-filtro-btn" type="button" data-publico="mulheres" aria-pressed="false">Mulheres</button>
+          <button class="personal-filtro-btn" type="button" data-publico="geral" aria-pressed="false">Geral</button>
+          <button class="personal-filtro-btn" type="button" data-publico="especiais" aria-pressed="false">Grupos especiais</button>
+        </div>
+      </div>
     </div>
+    <div class="personal-grid" id="personal-grid">
+      <div class="personal-card" data-regioes="taguatinga aguas-claras ceilandia online" data-publico="mulheres">
+        <div class="personal-card-photo-placeholder">Foto em breve</div>
+        <div class="personal-card-body">
+          <span class="eyebrow">Personal Trainer · CREF 019426-G/DF</span>
+          <h3>Evelyn Regina</h3>
+          <div class="personal-card-publico">Público: mulheres de todas as idades e níveis</div>
+          <div class="personal-card-cidades">Taguatinga · Águas Claras · Ceilândia · Online</div>
+          <p class="personal-card-bio">Treinos personalizados de acordo com objetivo, rotina e condicionamento — emagrecimento, ganho de massa muscular, condicionamento físico, saúde ou qualidade de vida. Desde 2021 unindo acompanhamento próximo a resultado consistente.</p>
+          <div class="personal-card-links"><span class="sem-contato">Contato em breve</span></div>
+        </div>
+      </div>
+      <div class="personal-card" data-regioes="plano-piloto taguatinga aguas-claras ceilandia guara samambaia sudoeste noroeste" data-publico="geral especiais">
+        <div class="personal-card-photo-placeholder">Foto em breve</div>
+        <div class="personal-card-body">
+          <span class="eyebrow">Personal Trainer · Pós-graduado em grupos especiais</span>
+          <h3>Alex Porto</h3>
+          <div class="personal-card-publico">Público: geral · idosos, obesidade e doenças crônicas</div>
+          <div class="personal-card-cidades">Presencial em todo o Distrito Federal</div>
+          <p class="personal-card-bio">Ex-atleta de fisiculturismo premiado, une experiência prática e prescrição segura para emagrecimento, hipertrofia, condicionamento físico ou ganho de força — com atenção especial a quem tem limitações de saúde.</p>
+          <div class="personal-card-links"><span class="sem-contato">Contato em breve</span></div>
+        </div>
+      </div>
+      <div class="personal-card" data-regioes="taguatinga guara samambaia ceilandia sudoeste noroeste plano-piloto" data-publico="geral">
+        <div class="personal-card-photo-placeholder">Foto em breve</div>
+        <div class="personal-card-body">
+          <span class="eyebrow">Personal Trainer · Bacharel em Educação Física</span>
+          <h3>Caio Henrique Leite Nunes</h3>
+          <div class="personal-card-publico">Público: geral</div>
+          <div class="personal-card-cidades">Taguatinga · Guará · Samambaia · Ceilândia · Sudoeste · Noroeste · Plano Piloto</div>
+          <p class="personal-card-bio">14+ anos de experiência. Avaliação postural funcional e prescrição baseada em evidências — melhora postural e alívio de dores, hipertrofia, condicionamento físico e emagrecimento saudável. Atendimento domiciliar, em condomínio ou academias parceiras.</p>
+          <div class="personal-card-links">
+            <a href="https://wa.me/5561982074927" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://instagram.com/caionunestreinador" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="personal-empty" id="personal-empty" hidden>Nenhum personal encontrado com esses filtros — tente outra combinação.</p>
   </div>
 </section>
+
+<script>
+  (function () {
+    var regiaoBtns = document.querySelectorAll('#personal-filtro-regiao .personal-filtro-btn');
+    var publicoBtns = document.querySelectorAll('#personal-filtro-publico .personal-filtro-btn');
+    var cards = document.querySelectorAll('#personal-grid .personal-card');
+    var empty = document.getElementById('personal-empty');
+    var regiaoAtual = 'todas';
+    var publicoAtual = 'todos';
+
+    function aplicarFiltro() {
+      var visiveis = 0;
+      cards.forEach(function (card) {
+        var regioes = (card.getAttribute('data-regioes') || '').split(' ');
+        var publicos = (card.getAttribute('data-publico') || '').split(' ');
+        var okRegiao = regiaoAtual === 'todas' || regioes.indexOf(regiaoAtual) !== -1;
+        var okPublico = publicoAtual === 'todos' || publicos.indexOf(publicoAtual) !== -1;
+        var visivel = okRegiao && okPublico;
+        card.hidden = !visivel;
+        if (visivel) visiveis++;
+      });
+      empty.hidden = visiveis > 0;
+    }
+
+    regiaoBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        regiaoBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        btn.setAttribute('aria-pressed', 'true');
+        regiaoAtual = btn.getAttribute('data-regiao');
+        aplicarFiltro();
+      });
+    });
+    publicoBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        publicoBtns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        btn.setAttribute('aria-pressed', 'true');
+        publicoAtual = btn.getAttribute('data-publico');
+        aplicarFiltro();
+      });
+    });
+  })();
+</script>
 
 <section class="section-alt" id="artigos">
   <div class="wrap">
