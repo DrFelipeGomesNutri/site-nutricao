@@ -1093,26 +1093,35 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius-m);
-    padding: 22px;
+    padding: 0;
+    overflow: hidden;
     text-decoration: none;
     color: var(--text);
     display: flex;
     flex-direction: column;
-    gap: 12px;
     transition: border-color 0.15s ease, transform 0.15s ease;
   }
   .receita-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .receita-thumb { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--surface-2); }
+  .receita-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+  .receita-card:hover .receita-thumb img { transform: scale(1.04); }
   .receita-card .play-icon {
-    width: 40px;
-    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: linear-gradient(120deg, var(--gold-deep) 0%, var(--gold) 20%, var(--gold-shine) 48%, var(--gold) 76%, var(--gold-deep) 100%);
     color: #1a1204;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    box-shadow: 0 6px 18px -6px rgba(0,0,0,0.45);
   }
+  .receita-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; }
   .receita-card h3 {
     font-family: var(--font-body);
     text-transform: none;
@@ -2556,24 +2565,32 @@
     </div>
     <div class="receitas-grid">
       <a class="receita-card" href="https://www.youtube.com/shorts/vNbJN9NfudQ" target="_blank" rel="noopener">
-        <span class="play-icon">▶</span>
-        <h3>Pão de batata sem farinha de trigo</h3>
-        <span class="receita-fonte">Assistir no YouTube →</span>
+        <span class="receita-thumb"><img src="https://img.youtube.com/vi/vNbJN9NfudQ/hqdefault.jpg" alt="Pão de batata sem farinha de trigo" loading="lazy"><span class="play-icon">▶</span></span>
+        <span class="receita-body">
+          <h3>Pão de batata sem farinha de trigo</h3>
+          <span class="receita-fonte">Assistir no YouTube →</span>
+        </span>
       </a>
       <a class="receita-card" href="https://www.youtube.com/shorts/NTkI2WfOD7k" target="_blank" rel="noopener">
-        <span class="play-icon">▶</span>
-        <h3>O pão sem glúten mais fácil do mundo</h3>
-        <span class="receita-fonte">Assistir no YouTube →</span>
+        <span class="receita-thumb"><img src="https://img.youtube.com/vi/NTkI2WfOD7k/hqdefault.jpg" alt="O pão sem glúten mais fácil do mundo" loading="lazy"><span class="play-icon">▶</span></span>
+        <span class="receita-body">
+          <h3>O pão sem glúten mais fácil do mundo</h3>
+          <span class="receita-fonte">Assistir no YouTube →</span>
+        </span>
       </a>
       <a class="receita-card" href="https://www.youtube.com/watch?v=aGXkA-E7vOs" target="_blank" rel="noopener">
-        <span class="play-icon">▶</span>
-        <h3>Mini pão francês sem glúten</h3>
-        <span class="receita-fonte">Assistir no YouTube →</span>
+        <span class="receita-thumb"><img src="https://img.youtube.com/vi/aGXkA-E7vOs/hqdefault.jpg" alt="Mini pão francês sem glúten" loading="lazy"><span class="play-icon">▶</span></span>
+        <span class="receita-body">
+          <h3>Mini pão francês sem glúten</h3>
+          <span class="receita-fonte">Assistir no YouTube →</span>
+        </span>
       </a>
       <a class="receita-card" href="https://www.youtube.com/shorts/FcGwEB95hDY" target="_blank" rel="noopener">
-        <span class="play-icon">▶</span>
-        <h3>Café da manhã low carb, zero carboidratos</h3>
-        <span class="receita-fonte">Assistir no YouTube →</span>
+        <span class="receita-thumb"><img src="https://img.youtube.com/vi/FcGwEB95hDY/hqdefault.jpg" alt="Café da manhã low carb, zero carboidratos" loading="lazy"><span class="play-icon">▶</span></span>
+        <span class="receita-body">
+          <h3>Café da manhã low carb, zero carboidratos</h3>
+          <span class="receita-fonte">Assistir no YouTube →</span>
+        </span>
       </a>
     </div>
     <p class="receitas-nota">Mais receitas em breve, incluindo uma seleção em parceria com a Luana Wellness FitCheff Gourmet.</p>
