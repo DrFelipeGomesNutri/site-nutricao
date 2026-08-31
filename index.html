@@ -190,6 +190,23 @@
   }
   .nav-cta:hover { background: var(--gold-glow); }
 
+  /* ---------- FAIXA DIA DO NUTRICIONISTA (31/08, aparece só nesse dia) ---------- */
+  .dia-nutricionista-banner {
+    background: linear-gradient(120deg, var(--gold-deep) 0%, var(--gold) 20%, var(--gold-shine) 48%, var(--gold) 76%, var(--gold-deep) 100%);
+    color: #1a1204;
+  }
+  .dia-nutricionista-banner .wrap {
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .dia-nutricionista-banner p { margin: 0; font-size: 0.86rem; font-weight: 600; max-width: none; }
+  .dia-nutricionista-banner .dia-nutricionista-emoji { font-size: 1.3rem; flex-shrink: 0; }
+  @media (max-width: 560px) {
+    .dia-nutricionista-banner .wrap { align-items: flex-start; }
+  }
+
   /* ---------- BUSCA DO SITE ---------- */
   .nav-right { display: flex; align-items: center; gap: 10px; }
   .site-search { position: relative; }
@@ -1482,6 +1499,25 @@
   </div>
 </header>
 
+<div class="dia-nutricionista-banner" id="dia-nutricionista-banner" hidden>
+  <div class="wrap">
+    <span class="dia-nutricionista-emoji">🎉</span>
+    <p><strong>31 de agosto — Dia do Nutricionista.</strong> Parabéns a todos os profissionais que transformam ciência em cuidado real — ajudando cada pessoa a entender o próprio corpo e a construir uma relação mais saudável com a alimentação, um paciente de cada vez.</p>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var bannerDia = document.getElementById('dia-nutricionista-banner');
+    if (bannerDia) {
+      var hojeDia = new Date();
+      if (hojeDia.getMonth() === 7 && hojeDia.getDate() === 31) {
+        bannerDia.hidden = false;
+      }
+    }
+  })();
+</script>
+
 <script>
   (function () {
     var searchIndex = [
@@ -1507,6 +1543,7 @@
       { title: 'TPM: alimentação e suplementação', desc: 'Artigo do blog — o que ajuda a aliviar os sintomas', tags: 'tpm tensao pre menstrual calcio magnesio vitamina b6 ciclo menstrual', anchor: '#artigos' },
       { title: 'SOP e endometriose: papel da alimentação', desc: 'Artigo do blog — dieta como apoio no tratamento', tags: 'sop sindrome ovarios policisticos endometriose resistencia insulina indice glicemico inflamacao', anchor: '#artigos' },
       { title: 'Anemia: só ferro resolve?', desc: 'Artigo do blog — cobre, vitamina C, B6/B9/B12, ferro em excesso e parasitas', tags: 'anemia ferro ferritina cobre quelato bisglicinato vitamina c b6 b9 b12 folico megaloblastica parasita verme ancilostomo desparasitacao', anchor: '#artigos' },
+      { title: 'Planejamento da gestação: suplementação a dois', desc: 'Artigo do blog — preparação do embrião, para elas e para eles', tags: 'planejamento gestacional pre concepcao gravidez acido folico iodo zinco espermatozoide ovulo embriao homem mulher', anchor: '#artigos' },
       { title: 'Depoimentos', desc: 'Avaliações reais de pacientes no Google', tags: 'depoimentos avaliacoes reviews opinioes', anchor: '#depoimentos' },
       { title: 'Blog e Artigos', desc: 'Conteúdo educativo com fontes científicas', tags: 'blog artigos dicas alimentacao mito sono proteina longevidade', anchor: '#artigos' },
       { title: 'Receitas em Vídeo', desc: 'Vídeos de receitas low carb no YouTube', tags: 'receitas videos youtube low carb dicas alimentacao cozinhar', anchor: '#receitas' },
@@ -2688,6 +2725,33 @@
               <li>Baddam S, Chen RJ. Iron Overload and Toxicity. In: <em>StatPearls</em> [Internet]. Treasure Island (FL): StatPearls Publishing; 2025. <a href="https://www.ncbi.nlm.nih.gov/books/NBK526131/" target="_blank" rel="noopener">NBK526131</a></li>
               <li>Torrez M, Chabot-Richards D, Babu D, Lockhart E, Foucar K. How I investigate acquired megaloblastic anemia. <em>Int J Lab Hematol.</em> 2022;44:236-247. <a href="https://doi.org/10.1111/ijlh.13789" target="_blank" rel="noopener">doi.org/10.1111/ijlh.13789</a></li>
               <li>Smith JL, Brooker S. Impact of hookworm infection and deworming on anaemia in non-pregnant populations: a systematic review. <em>Trop Med Int Health.</em> 2010;15(7):776-795. <a href="https://doi.org/10.1111/j.1365-3156.2010.02542.x" target="_blank" rel="noopener">doi.org/10.1111/j.1365-3156.2010.02542.x</a></li>
+            </ol>
+          </div>
+        </div>
+      </details>
+      <details class="artigo" data-categoria="fertilidade saude-da-mulher">
+        <summary>Planejamento da gestação: a suplementação também é coisa de dois <span class="plus">+</span></summary>
+        <div class="artigo-body">
+          <span class="artigo-tag">Fertilidade · Pré-Concepção</span>
+          <p>É comum pensar em preparação pra gravidez como algo só da mulher. Mas o óvulo e o espermatozoide levam meses pra se formar completamente, e a nutrição de cada um dos dois parceiros nesse período ajuda a montar as condições de partida do futuro embrião — é por isso que o planejamento pré-concepção rende mais quando é feito a dois.</p>
+          <p><strong>Para ela.</strong> O ácido fólico (B9) é o item com evidência mais forte e mais consolidada: uma revisão-guarda-chuva reunindo diversas metanálises mostrou redução de 77% no risco de defeitos do tubo neural do bebê com suplementação de ácido fólico, começando pelo menos 1 mês antes da concepção e seguindo até a 12ª semana de gestação¹. A dose de referência pra maioria das mulheres é 400mcg/dia — casos específicos (diabetes prévio, obesidade) podem precisar de dose maior, sempre orientada por profissional. O iodo também merece atenção: um estudo com suplementação pré-concepção mostrou melhora do status de iodo já no primeiro trimestre, e a literatura associa boa reserva de iodo materna a melhor desenvolvimento cognitivo da criança — o iodo é matéria-prima direta do hormônio da tireoide, essencial pra formação do cérebro fetal².</p>
+          <p><strong>Para ele.</strong> A parte masculina costuma ficar de fora da conversa, mas tem respaldo real: uma revisão sistemática com metanálise encontrou associação entre o status de folato do homem e parâmetros de qualidade do sêmen, incluindo aumento de motilidade espermática com suplementação de ácido fólico em homens subférteis³. Zinco também entra nessa lista — homens com fertilidade reduzida costumam ter zinco mais baixo no sêmen, e a reposição, quando há deficiência real, está associada à melhora de parâmetros seminais³.</p>
+          <p>Isso conecta direto com o que já vimos aqui no blog sobre o "<a href="#artigos">trimestre zero</a>": o espermatozoide leva cerca de 74 dias pra se formar por completo, e a fase final de maturação do óvulo dura de 70 a 90 dias — os mesmos ~3 meses antes de tentar engravidar valem pros dois lados, não só pra mulher.</p>
+          <div class="metais-tips" style="margin-top:8px;">
+            <strong>Na prática</strong>
+            <ul>
+              <li><strong>Ela:</strong> ácido fólico desde pelo menos 1 mês antes de tentar engravidar, dieta com boas fontes de iodo (sal iodado, peixes, laticínios) e avaliação de vitamina D e ferro.</li>
+              <li><strong>Ele:</strong> avaliação de zinco e folato quando há histórico de subfertilidade, além de dieta variada com boas fontes de zinco (carnes, castanhas, sementes) e antioxidantes (frutas, vegetais coloridos).</li>
+              <li><strong>Os dois:</strong> o ideal é começar o ajuste nutricional cerca de 3 meses antes de tentar engravidar — tempo compatível com o ciclo de formação do óvulo e do espermatozoide.</li>
+            </ul>
+          </div>
+          <div class="disclaimer-box">Conteúdo educativo, baseado em literatura científica indexada. Doses de suplementação devem ser sempre individualizadas em consulta de planejamento pré-concepção — inclusive pro parceiro — e não substituem avaliação médica e nutricional completa do casal.</div>
+          <div class="fontes">
+            <strong>Fontes</strong>
+            <ol>
+              <li>Abate BB, Kumsa H, Kibret GA, et al. Preconception Folic Acid and Multivitamin Supplementation for the Prevention of Neural Tube Defect: An Umbrella Review of Systematic Review and Meta-analysis. <em>Neuroepidemiology.</em> 2025;59(4):412-425. <a href="https://doi.org/10.1159/000539803" target="_blank" rel="noopener">doi.org/10.1159/000539803</a></li>
+              <li>Young AE, Kemp JF, Uhlson C, et al. Improved first trimester maternal iodine status with preconception supplementation: The Women First Trial. <em>Matern Child Nutr.</em> 2021;17(4):e13204. <a href="https://doi.org/10.1111/mcn.13204" target="_blank" rel="noopener">doi.org/10.1111/mcn.13204</a></li>
+              <li>Hoek J, Steegers-Theunissen RPM, Willemsen SP, Schoenmakers S. Paternal Folate Status and Sperm Quality, Pregnancy Outcomes, and Epigenetics: A Systematic Review and Meta-Analysis. <em>Mol Nutr Food Res.</em> 2020;64(9):1900696. <a href="https://doi.org/10.1002/mnfr.201900696" target="_blank" rel="noopener">doi.org/10.1002/mnfr.201900696</a></li>
             </ol>
           </div>
         </div>
