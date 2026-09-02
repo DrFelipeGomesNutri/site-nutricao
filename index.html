@@ -3201,10 +3201,13 @@
 
 <script>
   (function () {
-    // TODO: os 3 últimos itens (filtro de chuveiro, azul de metileno, Lugol)
-    // ainda usam link de busca genérica da Shopee — NÃO geram comissão.
-    // Pra virar afiliado real: app Shopee Afiliados / Portal de Criadores,
-    // priorizando sempre comissão % e nº de vendas de cada produto.
+    // TODO: filtro de chuveiro, azul de metileno e Lugol ainda usam link de
+    // busca genérica da Shopee — NÃO geram comissão. Pra virar afiliado real:
+    // app Shopee Afiliados / Portal de Criadores, priorizando sempre comissão
+    // % e nº de vendas de cada produto.
+    // TODO: balança de cozinha digital também ainda é link de busca genérica
+    // do Mercado Livre (não é afiliado) — converter na Central de Afiliados
+    // e Criadores (etiqueta gofe2967841) e trocar pelo link curto meli.la.
     // Os demais itens já usam link de afiliado real do Mercado Livre
     // (Central de Afiliados e Criadores, etiqueta gofe2967841).
     var PRODUTOS_RECOMENDADOS = [
@@ -3221,7 +3224,8 @@
       { emoji: '🦷', nome: 'Pasta de Dente sem Flúor — Kit 2un Boni Natural', blurb: 'Mesma linha natural, kit com 2 unidades pra render mais.', link: 'https://meli.la/239H2UV', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_820592-MLA106660654885_022026-O.webp' },
       { emoji: '🚿', nome: 'Filtro de Chuveiro 20 Camadas', blurb: 'Sistema multicamadas nota 5.0 na Shopee — reduz cloro, metais pesados e sedimentos da água do banho.', link: 'https://shopee.com.br/search?keyword=filtro%20de%20chuveiro%2020%20camadas', loja: 'Shopee' },
       { emoji: '💊', nome: 'Azul de Metileno P.A. — Ozonsaúde', blurb: 'Grau analítico, mais puro que grau USP. Uso apenas com orientação de profissional de saúde.', link: 'https://shopee.com.br/search?keyword=azul%20de%20metileno%20p.a.', loja: 'Shopee' },
-      { emoji: '💧', nome: 'Lugol — Solução de Iodo/Iodeto 5%', blurb: 'Reposição de iodo. Dose e uso sempre orientados por profissional.', link: 'https://shopee.com.br/search?keyword=lugol%20solucao%20de%20iodo', loja: 'Shopee' }
+      { emoji: '💧', nome: 'Lugol — Solução de Iodo/Iodeto 5%', blurb: 'Reposição de iodo. Dose e uso sempre orientados por profissional.', link: 'https://shopee.com.br/search?keyword=lugol%20solucao%20de%20iodo', loja: 'Shopee' },
+      { emoji: '⚖️', nome: 'Balança de Cozinha Digital', blurb: 'Modelo simples e barato (ex. Tomate SF-410), essencial pra pesar porção de alimento com precisão em casa.', link: 'https://lista.mercadolivre.com.br/balanca-cozinha-digital-tomate-sf-410', loja: 'Mercado Livre' }
     ];
 
     var ordem = PRODUTOS_RECOMENDADOS.map(function (_, i) { return i; });
