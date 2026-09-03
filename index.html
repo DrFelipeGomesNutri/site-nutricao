@@ -830,6 +830,50 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
   }
+  .chas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .cha-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-m);
+    padding: 24px;
+  }
+  .cha-card h4 {
+    font-family: var(--font-body);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 14px;
+  }
+  .cha-linha { margin-bottom: 10px; }
+  .cha-linha:last-of-type { margin-bottom: 0; }
+  .cha-linha .cha-label {
+    display: block;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 2px;
+  }
+  .cha-linha p { font-size: 0.86rem; color: var(--text-muted); margin: 0; }
+  .cha-alerta {
+    margin-top: 14px;
+    background: var(--surface-2);
+    border-left: 3px solid var(--gold);
+    border-radius: var(--radius-s);
+    padding: 12px 14px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  @media (max-width: 860px) {
+    .chas-grid { grid-template-columns: 1fr; }
+  }
   .nutriente-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -1577,6 +1621,7 @@
           <div class="menu-panel-group">
             <span class="menu-panel-label">Conteúdo</span>
             <a href="#nutrientes">Conheça os Nutrientes</a>
+            <a href="#chas">Chás e Infusões</a>
             <a href="#artigos">Blog e Artigos</a>
             <a href="#receitas">Receitas em Vídeo</a>
             <a href="#imc">Calculadora de IMC</a>
@@ -1637,6 +1682,7 @@
       { title: 'Como funciona a consulta', desc: 'Atendimento presencial (Asa Sul) e online', tags: 'consulta presencial online como funciona agendar marcar', anchor: '#consulta' },
       { title: 'Calculadora de IMC', desc: 'Ferramenta gratuita: calcule seu IMC', tags: 'imc calculadora peso altura indice massa corporal', anchor: '#imc' },
       { title: 'Conheça os Nutrientes', desc: 'Macro e micronutrientes: papel e deficiência', tags: 'nutrientes macronutrientes micronutrientes vitaminas minerais proteina carboidrato gordura ferro calcio vitamina', anchor: '#nutrientes' },
+      { title: 'Chás e Infusões', desc: 'Benefícios, preparo, horário e contraindicações', tags: 'chas infusao camomila hortela menta gengibre cha verde hibisco erva cidreira melissa gestante lactante medicacao', anchor: '#chas' },
       { title: 'Aminoácidos', desc: 'Leucina, triptofano, lisina, glutamina: papel e deficiência', tags: 'aminoacidos leucina triptofano lisina glutamina proteina', anchor: '#nutrientes' },
       { title: 'Metais Pesados', desc: 'Mercúrio, chumbo, cádmio, arsênio, alumínio: efeitos e eliminação natural', tags: 'metais pesados mercurio chumbo cadmio arsenio aluminio detox desintoxicacao', anchor: '#nutrientes' },
       { title: 'Alumínio na alimentação', desc: 'Artigo do blog: o que preocupa de verdade (e o que não)', tags: 'aluminio alimentacao panela fermento queijo processado rim renal dialise', anchor: '#artigos' },
@@ -2321,6 +2367,75 @@
           </ol>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="chas">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="nutri-icon">🍵</span>
+      <div class="eyebrow">Guia rápido</div>
+      <h2>Chás e Infusões</h2>
+      <p>Benefício real, forma de preparo e para que serve, cada chá tem seu momento certo e sua contraindicação. Antes de usar como apoio terapêutico, sempre vale checar interação com medicação em uso.</p>
+    </div>
+    <div class="chas-grid">
+      <div class="cha-card">
+        <h4>Camomila</h4>
+        <div class="cha-linha"><span class="cha-label">Para que serve</span><p>Efeito calmante leve, apoio pra ansiedade e qualidade do sono. Também usada tradicionalmente pra desconforto digestivo.</p></div>
+        <div class="cha-linha"><span class="cha-label">Como preparar</span><p>1 colher de chá (sopa) de flores secas em 200ml de água quente (não fervendo), abafado por 5 a 10 minutos.</p></div>
+        <div class="cha-linha"><span class="cha-label">Melhor horário</span><p>À noite, 30 a 60 minutos antes de dormir.</p></div>
+        <div class="cha-linha"><span class="cha-label">Temperatura de consumo</span><p>Morno.</p></div>
+        <div class="cha-alerta">⚠️ Pode interagir com anticoagulantes (varfarina) e sedativos. Segurança na gestação e amamentação ainda não bem estabelecida, evite sem orientação profissional.</div>
+      </div>
+      <div class="cha-card">
+        <h4>Hortelã / Menta</h4>
+        <div class="cha-linha"><span class="cha-label">Para que serve</span><p>Alívio de desconforto digestivo leve, gases e sensação de estufamento após refeição.</p></div>
+        <div class="cha-linha"><span class="cha-label">Como preparar</span><p>1 colher de sopa de folhas frescas ou secas em 200ml de água quente, abafado por 5 minutos.</p></div>
+        <div class="cha-linha"><span class="cha-label">Melhor horário</span><p>Após as refeições.</p></div>
+        <div class="cha-linha"><span class="cha-label">Temperatura de consumo</span><p>Morno ou frio (gelado também funciona bem).</p></div>
+        <div class="cha-alerta">⚠️ Evitar em caso de refluxo (DRGE) ou hérnia de hiato, pode relaxar o esfíncter esofágico e piorar a azia. Consumo medicinal concentrado na gestação/amamentação deve ser avaliado por profissional.</div>
+      </div>
+      <div class="cha-card">
+        <h4>Gengibre</h4>
+        <div class="cha-linha"><span class="cha-label">Para que serve</span><p>Náusea e enjoo, inclusive em gestação (com respaldo científico consistente para esse uso específico)¹.</p></div>
+        <div class="cha-linha"><span class="cha-label">Como preparar</span><p>Algumas fatias finas de gengibre fresco fervidas por 5 a 10 minutos em 200ml de água.</p></div>
+        <div class="cha-linha"><span class="cha-label">Melhor horário</span><p>Quando o enjoo aparecer, ou pela manhã em caso de náusea matinal.</p></div>
+        <div class="cha-linha"><span class="cha-label">Temperatura de consumo</span><p>Morno ou quente.</p></div>
+        <div class="cha-alerta">⚠️ Tem ação anticoagulante natural, evitar em quem usa anticoagulante (varfarina, AAS em dose terapêutica) ou nas semanas próximas ao parto, pelo risco de sangramento. Gestantes: dose diária não deve passar de 1g, sempre com orientação do obstetra.</div>
+      </div>
+      <div class="cha-card">
+        <h4>Chá Verde</h4>
+        <div class="cha-linha"><span class="cha-label">Para que serve</span><p>Antioxidante (catequinas), apoio metabólico leve quando combinado à cafeína natural presente na folha.</p></div>
+        <div class="cha-linha"><span class="cha-label">Como preparar</span><p>1 colher de chá das folhas em água a 70-80°C (não fervente, pra não amargar), abafado por 2 a 3 minutos.</p></div>
+        <div class="cha-linha"><span class="cha-label">Melhor horário</span><p>Pela manhã ou início da tarde, longe do horário de dormir por causa da cafeína.</p></div>
+        <div class="cha-linha"><span class="cha-label">Temperatura de consumo</span><p>Quente ou gelado.</p></div>
+        <div class="cha-alerta">⚠️ Reduz a absorção de ferro e ácido fólico, evitar junto das refeições principais. Contém vitamina K, pode reduzir o efeito de anticoagulantes como varfarina. Gestantes devem limitar pelo teor de cafeína e pelo efeito sobre o ácido fólico.</div>
+      </div>
+      <div class="cha-card">
+        <h4>Hibisco</h4>
+        <div class="cha-linha"><span class="cha-label">Para que serve</span><p>Apoio à pressão arterial, uma metanálise de estudos clínicos encontrou redução real da pressão sistólica e diastólica com uso regular².</p></div>
+        <div class="cha-linha"><span class="cha-label">Como preparar</span><p>1 colher de sopa de flor seca em 200ml de água fervente, abafado por 5 a 10 minutos.</p></div>
+        <div class="cha-linha"><span class="cha-label">Melhor horário</span><p>Fora do horário de medicação para pressão, evitando sobreposição de efeito.</p></div>
+        <div class="cha-linha"><span class="cha-label">Temperatura de consumo</span><p>Quente ou gelado (bem popular como versão fria).</p></div>
+        <div class="cha-alerta">⚠️ Pode potencializar remédios pra pressão e diabetes, risco de queda de pressão exagerada, checar com o médico se usa esses medicamentos. Contém compostos com ação estrogênica, evitar na gestação pelo risco teórico associado a trabalho de parto prematuro.</div>
+      </div>
+      <div class="cha-card">
+        <h4>Erva-Cidreira (Melissa)</h4>
+        <div class="cha-linha"><span class="cha-label">Para que serve</span><p>Ansiedade leve, tensão nervosa e apoio à qualidade do sono.</p></div>
+        <div class="cha-linha"><span class="cha-label">Como preparar</span><p>1 colher de sopa de folhas em 200ml de água quente, abafado por 5 a 10 minutos.</p></div>
+        <div class="cha-linha"><span class="cha-label">Melhor horário</span><p>À noite, ou em momentos de tensão/ansiedade ao longo do dia.</p></div>
+        <div class="cha-linha"><span class="cha-label">Temperatura de consumo</span><p>Morno.</p></div>
+        <div class="cha-alerta">⚠️ Pode interferir na função da tireoide, cautela em quem tem hipotireoidismo ou usa levotiroxina. Segurança na gestação e amamentação não é bem estabelecida, evite sem orientação profissional.</div>
+      </div>
+    </div>
+    <div class="disclaimer-box" style="margin-top:24px;">Conteúdo educativo, baseado em literatura científica indexada. Chá é apoio complementar, não substitui tratamento médico ou nutricional. Se você usa qualquer medicação contínua, é gestante ou lactante, converse com seu médico ou nutricionista antes de incluir qualquer chá com regularidade, mesmo os "naturais" têm interação real com remédio e contraindicação própria.</div>
+    <div class="fontes" style="margin-top:16px;">
+      <strong>Fontes</strong>
+      <ol>
+        <li>Viljoen E, Visser J, Koen N, Musekiwa A. A systematic review and meta-analysis of the effect and safety of ginger in the treatment of pregnancy-associated nausea and vomiting. <em>Nutrition Journal.</em> 2014;13:20. <a href="https://doi.org/10.1186/1475-2891-13-20" target="_blank" rel="noopener">doi.org/10.1186/1475-2891-13-20</a></li>
+        <li>Ellis LR, Zulfiqar S, Holmes M, Marshall L, Dye L, Boesch C. A systematic review and meta-analysis of the effects of Hibiscus sabdariffa on blood pressure and cardiometabolic markers. <em>Nutrition Reviews.</em> 2022;80(6):1723-1737. <a href="https://doi.org/10.1093/nutrit/nuab104" target="_blank" rel="noopener">doi.org/10.1093/nutrit/nuab104</a></li>
+      </ol>
     </div>
   </div>
 </section>
