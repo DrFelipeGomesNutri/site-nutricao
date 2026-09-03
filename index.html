@@ -1835,10 +1835,10 @@
         </div>
         <div class="imc-field">
           <label for="imc-altura">Altura (cm)</label>
-          <input type="number" id="imc-altura" inputmode="numeric" min="50" max="250" placeholder="Ex.: 172">
+          <input type="text" id="imc-altura" inputmode="numeric" placeholder="Ex.: 172">
         </div>
         <button class="btn btn-primary" id="imc-calcular" type="button">Calcular meu IMC</button>
-        <p style="margin:10px 0 0;font-size:0.78rem;color:#96a7bd;">No campo de peso, use vírgula ou ponto pra casas decimais (ex.: 78,5 ou 78.5) — os dois funcionam.</p>
+        <p style="margin:10px 0 0;font-size:0.78rem;color:#96a7bd;">No peso, vírgula ou ponto funcionam pra casas decimais (ex.: 78,5). Na altura, digite só o número em centímetros, sem vírgula nem ponto (ex.: 172).</p>
         <div class="imc-error" id="imc-erro">Confira os valores preenchidos, idade, peso e altura precisam ser números válidos dentro de uma faixa realista.</div>
       </div>
       <div class="imc-result-card" id="imc-resultado">
@@ -1877,7 +1877,7 @@
     document.getElementById('imc-calcular').addEventListener('click', function () {
       var idade = parseFloat(document.getElementById('imc-idade').value);
       var peso = parseFloat(document.getElementById('imc-peso').value.toString().replace(',', '.'));
-      var alturaCm = parseFloat(document.getElementById('imc-altura').value);
+      var alturaCm = parseFloat(document.getElementById('imc-altura').value.toString().replace(/[.,]/g, ''));
       var erroEl = document.getElementById('imc-erro');
       var resultEl = document.getElementById('imc-resultado');
 
