@@ -1166,6 +1166,16 @@
     color: var(--text-muted);
   }
   .fontes strong { display: block; color: var(--text); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+  .tabela-arroz th { text-align:left; padding:10px 14px; color:#96780f; font-weight:800; text-transform:uppercase; font-size:0.72rem; letter-spacing:0.06em; border-bottom:2px solid rgba(168,121,12,0.35); }
+  .tabela-arroz td { padding:10px 14px; border-bottom:1px solid rgba(168,121,12,0.18); }
+  .tabela-arroz td.lbl { font-weight:700; }
+  .tabela-arroz .short { display:none; }
+  @media (max-width: 480px) {
+    .tabela-arroz th, .tabela-arroz td { padding:8px 6px; font-size:0.82rem; }
+    .tabela-arroz th { font-size:0.62rem; }
+    .tabela-arroz .full { display:none; }
+    .tabela-arroz .short { display:inline; }
+  }
   .fontes ol { margin: 0; padding-left: 18px; }
   .fontes li { margin-bottom: 6px; }
   .fontes a { color: var(--gold); text-decoration: none; word-break: break-word; }
@@ -1410,7 +1420,8 @@
     color: var(--text-muted);
   }
   .credbar strong { color: var(--text); font-weight: 700; }
-  .credbar-item { display: flex; align-items: center; gap: 8px; }
+  .credbar-item { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .credbar-item .dot { flex-shrink: 0; }
   .dot { color: var(--gold); }
 
   /* ---------- SECTIONS ---------- */
@@ -1890,10 +1901,10 @@
 
 <div class="credbar">
   <div class="wrap">
-    <div class="credbar-item"><span class="dot">●</span> CRN <strong>18187</strong></div>
-    <div class="credbar-item"><span class="dot">●</span> <strong>Asa Sul</strong> · Brasília/DF</div>
-    <div class="credbar-item"><span class="dot">●</span> Atendimento <strong>presencial</strong> (Asa Sul) e <strong>online</strong> para outros estados/países</div>
-    <div class="credbar-item"><span class="dot">●</span> Instituto Prado</div>
+    <div class="credbar-item"><span class="dot">●</span> <span>CRN <strong>18187</strong></span></div>
+    <div class="credbar-item"><span class="dot">●</span> <span><strong>Asa Sul</strong> · Brasília/DF</span></div>
+    <div class="credbar-item"><span class="dot">●</span> <span>Atendimento <strong>presencial</strong> (Asa Sul) e <strong>online</strong> para outros estados/países</span></div>
+    <div class="credbar-item"><span class="dot">●</span> <span>Instituto Prado</span></div>
   </div>
 </div>
 
@@ -3527,17 +3538,17 @@
           <span class="artigo-tag">Mito vs. Fato</span>
           <p>A resposta honesta é que não existe "o melhor arroz" de forma absoluta, cada um dos três tem um ponto forte real, comprovado por dado, não por opinião. E um deles surpreende: o parboilizado, que passa por mais processamento industrial que o integral, pode ter um impacto na glicemia menor do que ele em alguns estudos, o que contraria a ideia de que "quanto menos processado, melhor" sempre vale.</p>
           <div style="overflow-x:auto; margin:20px 0;">
-            <table style="width:100%; border-collapse:collapse; min-width:420px;">
+            <table class="tabela-arroz" style="width:100%; border-collapse:collapse;">
               <tr>
-                <th style="text-align:left; padding:10px 14px; color:#96780f; font-weight:800; text-transform:uppercase; font-size:0.72rem; letter-spacing:0.06em; border-bottom:2px solid rgba(168,121,12,0.35);"></th>
-                <th style="text-align:left; padding:10px 14px; color:#96780f; font-weight:800; text-transform:uppercase; font-size:0.72rem; letter-spacing:0.06em; border-bottom:2px solid rgba(168,121,12,0.35);">Branco</th>
-                <th style="text-align:left; padding:10px 14px; color:#96780f; font-weight:800; text-transform:uppercase; font-size:0.72rem; letter-spacing:0.06em; border-bottom:2px solid rgba(168,121,12,0.35);">Parboilizado</th>
-                <th style="text-align:left; padding:10px 14px; color:#96780f; font-weight:800; text-transform:uppercase; font-size:0.72rem; letter-spacing:0.06em; border-bottom:2px solid rgba(168,121,12,0.35);">Integral</th>
+                <th></th>
+                <th>Branco</th>
+                <th><span class="full">Parboilizado</span><span class="short">Parboil.</span></th>
+                <th>Integral</th>
               </tr>
-              <tr><td style="padding:10px 14px; font-weight:700; border-bottom:1px solid rgba(168,121,12,0.18);">Calorias</td><td style="padding:10px 14px; border-bottom:1px solid rgba(168,121,12,0.18);">128 kcal</td><td style="padding:10px 14px; border-bottom:1px solid rgba(168,121,12,0.18);">130 kcal</td><td style="padding:10px 14px; border-bottom:1px solid rgba(168,121,12,0.18);">124 kcal</td></tr>
-              <tr><td style="padding:10px 14px; font-weight:700; border-bottom:1px solid rgba(168,121,12,0.18);">Carboidrato</td><td style="padding:10px 14px; border-bottom:1px solid rgba(168,121,12,0.18);">28,1 g</td><td style="padding:10px 14px; border-bottom:1px solid rgba(168,121,12,0.18);">28,2 g</td><td style="padding:10px 14px; border-bottom:1px solid rgba(168,121,12,0.18);">25,8 g</td></tr>
-              <tr><td style="padding:10px 14px; font-weight:700; border-bottom:1px solid rgba(168,121,12,0.18);">Proteína</td><td style="padding:10px 14px; border-bottom:1px solid rgba(168,121,12,0.18);">2,5 g</td><td style="padding:10px 14px; border-bottom:1px solid rgba(168,121,12,0.18);">2,6 g</td><td style="padding:10px 14px; border-bottom:1px solid rgba(168,121,12,0.18);">2,6 g</td></tr>
-              <tr><td style="padding:10px 14px; font-weight:700;">Fibra</td><td style="padding:10px 14px;">1,6 g</td><td style="padding:10px 14px;">~1,1 g</td><td style="padding:10px 14px; font-weight:800;">2,7 g</td></tr>
+              <tr><td class="lbl">Calorias</td><td>128 kcal</td><td>130 kcal</td><td>124 kcal</td></tr>
+              <tr><td class="lbl">Carboidrato</td><td>28,1 g</td><td>28,2 g</td><td>25,8 g</td></tr>
+              <tr><td class="lbl">Proteína</td><td>2,5 g</td><td>2,6 g</td><td>2,6 g</td></tr>
+              <tr><td class="lbl" style="border-bottom:none;">Fibra</td><td style="border-bottom:none;">1,6 g</td><td style="border-bottom:none;">~1,1 g</td><td style="border-bottom:none; font-weight:800;">2,7 g</td></tr>
             </table>
           </div>
           <p style="font-size:0.82rem; color:#8a95a8;">Valores por 100g cozido, aproximados (podem variar por marca e cultivar). Fonte: Tabela TACO, via Nutritotal PRO.</p>
