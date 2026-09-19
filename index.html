@@ -296,10 +296,6 @@
   .search-result .sr-title { font-weight: 700; font-size: 0.86rem; }
   .search-result .sr-desc { font-size: 0.76rem; color: var(--text-muted); }
   .search-empty { padding: 9px 10px; font-size: 0.82rem; color: var(--text-muted); }
-  @media (max-width: 560px) {
-    .search-box { right: -40px; }
-  }
-
   /* ---------- MENU DO SITE ---------- */
   .site-menu { position: relative; }
   .menu-toggle {
@@ -359,10 +355,14 @@
   }
   .menu-panel-group a:hover { color: var(--gold); }
   @media (max-width: 700px) {
-    .menu-panel { grid-template-columns: 1fr 1fr; right: -60px; }
+    .site-menu, .site-search { position: static; }
+    .menu-panel { grid-template-columns: 1fr 1fr; top: 100%; left: 12px; right: 12px; width: auto; max-height: calc(100vh - 90px); overflow-y: auto; }
+    .menu-panel-group a { word-break: normal; overflow-wrap: normal; }
+    .search-box { top: 100%; left: 12px; right: 12px; width: auto; }
   }
   @media (max-width: 480px) {
-    .menu-panel { grid-template-columns: 1fr; right: -80px; width: 88vw; }
+    .menu-panel { grid-template-columns: 1fr; gap: 14px; }
+    .menu-panel-group a { padding: 8px 0; }
   }
 
   /* ---------- HERO ---------- */
