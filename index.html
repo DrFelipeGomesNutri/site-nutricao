@@ -4247,10 +4247,7 @@
 
 <script>
   (function () {
-    // TODO: filtro de chuveiro usa link comum do produto na Shopee (sem
-    // rastreio), NÃO gera comissão. Pra virar afiliado real: app Shopee
-    // Afiliados, priorizando sempre comissão % e nº de vendas.
-    // Os demais itens já usam link de afiliado real (Mercado Livre: Central
+    // Todos os itens usam link de afiliado real (Mercado Livre: Central
     // de Afiliados e Criadores, etiqueta gofe2967841; Shopee: app Afiliados).
     var PRODUTOS_RECOMENDADOS = [
       { emoji: '🍳', nome: 'Jogo de Panelas de Cerâmica', blurb: 'Antiaderente sem PTFE/PFOA, pra reduzir a exposição a químicos no preparo das refeições.', link: 'https://meli.la/1TUSHHz', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_926181-MLA106965198532_022026-O.webp' },
@@ -4264,7 +4261,7 @@
       { emoji: '🦷', nome: 'Pasta de Dente sem Flúor, Ozoncare', blurb: 'Alternativa natural pra higiene bucal do dia a dia.', link: 'https://meli.la/2aFRFkR', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_909726-MLB89938958435_082025-O-pasta-de-dente-creme-dental-ozonizado-sem-fluor-natural.webp' },
       { emoji: '🦷', nome: 'Pasta de Dente sem Flúor, Boni Natural', blurb: 'Menta e melaleuca, outra opção natural pra higiene bucal.', link: 'https://meli.la/23vEomW', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_702247-MLA107082675059_022026-O.webp' },
       { emoji: '🦷', nome: 'Pasta de Dente sem Flúor, Kit 2un Boni Natural', blurb: 'Mesma linha natural, kit com 2 unidades pra render mais.', link: 'https://meli.la/239H2UV', loja: 'Mercado Livre', img: 'https://http2.mlstatic.com/D_NQ_NP_820592-MLA106660654885_022026-O.webp' },
-      { emoji: '🚿', nome: 'Filtro de Chuveiro 20 Camadas', blurb: 'Sistema multicamadas nota 4.9, 215 vendidos, reduz cloro, metais pesados e sedimentos da água do banho.', link: 'https://shopee.com.br/product/1267153913/58261800659', loja: 'Shopee', img: 'https://down-br.img.susercontent.com/file/br-11134207-820l7-mpd4am11b21113' },
+      { emoji: '🚿', nome: 'Filtro de Chuveiro 20 Camadas', blurb: 'Sistema multicamadas nota 4.9, 277 vendidos, reduz cloro, metais pesados e sedimentos da água do banho.', link: 'https://s.shopee.com.br/7KxnTCUoBZ', loja: 'Shopee', img: 'https://down-br.img.susercontent.com/file/br-11134207-820l7-mpd4am11b21113' },
       { emoji: '💊', nome: 'Azul de Metileno P.A., Ozonsaúde', blurb: 'Grau analítico, mais puro que grau USP. Uso apenas com orientação de profissional de saúde.', link: 'https://s.shopee.com.br/9pe2DnKqrn', loja: 'Shopee', img: 'https://down-br.img.susercontent.com/file/br-11134207-81z1k-mhsbywn5gcg160' },
       { emoji: '💧', nome: 'Lugol (Solução de Iodo/Iodeto 5%)', blurb: 'Reposição de iodo. Dose e uso sempre orientados por profissional.', link: 'https://s.shopee.com.br/9fKc1Zx44T', loja: 'Shopee', img: 'https://down-br.img.susercontent.com/file/br-11134207-81z1k-mi0fwdi6urd2e9' },
       { emoji: '🎒', nome: 'Marmita Fitness com Divisórias, KAZIVA', blurb: 'Kit 10 potes 800ml, travas laterais herméticas, livres de BPA.', link: 'https://s.shopee.com.br/80CO2TrDxK', loja: 'Shopee', img: 'https://down-br.img.susercontent.com/file/br-11134207-820lw-moa4eh3e81kza4' },
@@ -4293,7 +4290,9 @@
       { emoji: '🍟', nome: 'Air Fryer Mondial Pratic 3,6L', blurb: 'Fritadeira elétrica sem óleo, 5mil+ vendidos.', link: 'https://s.shopee.com.br/7VHCbD9dYf', loja: 'Shopee', img: 'https://down-br.img.susercontent.com/file/sg-11134201-82595-mucby5meaa68b1' },
       { emoji: '🍟', nome: 'Air Fryer Elgin Quad Fry 4,2L', blurb: 'Fritadeira elétrica sem óleo, 1400W, mais capacidade pra família.', link: 'https://s.shopee.com.br/AKbNyRKVuk', loja: 'Shopee', img: 'https://down-br.img.susercontent.com/file/sg-11134201-825a1-mrgcj1d2oq2q26' },
       { emoji: '🥤', nome: 'Copo Térmico Inox 1200ml com Tampa e Canudo', blurb: 'Mantém a bebida na temperatura e ajuda a bater a meta de água do dia.', link: 'https://s.shopee.com.br/7pu2zF9uv4', loja: 'Shopee', img: 'https://down-br.img.susercontent.com/file/br-11134207-820lh-mtgcw2meqoeac6' },
-      { emoji: '🥤', nome: 'Garrafa Térmica Inox com Capa de Silicone', blurb: 'Capa antiderrapante, 9mil+ vendidos, ótima pra treino e dia a dia.', link: 'https://s.shopee.com.br/50Zrc3oxZG', loja: 'Shopee', img: 'https://down-br.img.susercontent.com/file/br-11134207-820m5-mt00jk3e0eme7b' }
+      { emoji: '🥤', nome: 'Garrafa Térmica Inox com Capa de Silicone', blurb: 'Capa antiderrapante, 9mil+ vendidos, ótima pra treino e dia a dia.', link: 'https://s.shopee.com.br/50Zrc3oxZG', loja: 'Shopee', img: 'https://down-br.img.susercontent.com/file/br-11134207-820m5-mt00jk3e0eme7b' },
+      { emoji: '🚿', nome: 'Filtro Anticloro 20 Estágios pra Chuveiro e Torneira', blurb: 'Cromado, inox, com 2 cartuchos, reduz cloro e impurezas da água.', link: 'https://s.shopee.com.br/113jvVcSsu', loja: 'Shopee', img: 'https://down-br.img.susercontent.com/file/br-11134258-820lw-mlc5ivsid3bb6c' },
+      { emoji: '💊', nome: 'Azul de Metileno 5% 35ml, Céu', blurb: 'Solução 5% em frasco de 35ml. Uso apenas com orientação de profissional de saúde.', link: 'https://s.shopee.com.br/8AWuSr2Kwq', loja: 'Shopee', img: 'https://down-br.img.susercontent.com/file/br-11134207-820m8-msa9q7j02oedf5' }
     ];
 
     var ordem = PRODUTOS_RECOMENDADOS.map(function (_, i) { return i; });
