@@ -1007,6 +1007,35 @@
     .resultados-grid { grid-template-columns: 1fr; }
   }
 
+  /* ---------- TRANSFORMACOES (antes/depois) ---------- */
+  .transformacoes { background: var(--surface-2); }
+  .transformacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .transformacao-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .transformacao-card img {
+    width: 100%;
+    display: block;
+  }
+  .transformacao-card p {
+    margin: 0;
+    padding: 16px 20px 20px;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text);
+  }
+  @media (max-width: 860px) {
+    .transformacoes-grid { grid-template-columns: 1fr; }
+  }
+
   /* ---------- GALERIA DE PACIENTES (momentos no consultorio) ---------- */
   .pacientes-galeria { background: var(--surface-2); }
   .galeria-frame {
@@ -1840,6 +1869,7 @@
           <div class="menu-panel-group">
             <span class="menu-panel-label">Comunidade</span>
             <a href="#resultados-reais">Resultados Reais</a>
+            <a href="#transformacoes">Transformações Reais</a>
             <a href="#pacientes">Momentos com Pacientes</a>
             <a href="#depoimentos">Depoimentos</a>
             <a href="#treino">Personal Parceiro</a>
@@ -1893,6 +1923,7 @@
       { title: 'Como funciona a consulta', desc: 'Atendimento presencial (Asa Sul) e online', tags: 'consulta presencial online como funciona agendar marcar', anchor: '#consulta' },
       { title: 'Calculadora de IMC', desc: 'Ferramenta gratuita: calcule seu IMC', tags: 'imc calculadora peso altura indice massa corporal', anchor: '#imc' },
       { title: 'Protocolo de Avaliação Física', desc: 'Baixe a ficha e tire suas medidas antes da consulta', tags: 'protocolo avaliacao fisica medidas fita metrica circunferencia pdf download baixar masculino feminino', anchor: '#protocolo-avaliacao' },
+      { title: 'Transformações Reais', desc: 'Antes e depois de pacientes e alunos em acompanhamento', tags: 'transformacao antes depois resultado emagrecimento foto real paciente aluno', anchor: '#transformacoes' },
       { title: 'Conheça os Nutrientes', desc: 'Macro e micronutrientes: papel e deficiência', tags: 'nutrientes macronutrientes micronutrientes vitaminas minerais proteina carboidrato gordura ferro calcio vitamina', anchor: '#nutrientes' },
       { title: 'Chás e Infusões', desc: 'Benefícios, preparo, horário e contraindicações', tags: 'chas infusao camomila hortela menta gengibre cha verde hibisco erva cidreira melissa gestante lactante medicacao capim santo capim cidreira funcho erva doce alecrim oregano anis estrelado espinheira santa losna melao de sao caetano canela cravo centella asiatica cavalinha dente de leao bugre', anchor: '#chas' },
       { title: 'Aminoácidos', desc: 'Leucina, triptofano, lisina, glutamina: papel e deficiência', tags: 'aminoacidos leucina triptofano lisina glutamina proteina', anchor: '#nutrientes' },
@@ -4459,6 +4490,39 @@
         render();
       }, 4000);
     }
+  })();
+</script>
+
+<section class="transformacoes" id="transformacoes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Transformações reais</div>
+      <h2 style="font-size:1.6rem;">Resultados conquistados por pessoas reais</h2>
+      <p>Cada corpo responde de um jeito. Estes são relatos de pacientes e alunos em acompanhamento nutricional, sem promessa de resultado igual para todos.</p>
+    </div>
+    <div class="transformacoes-grid" id="transformacoes-grid"></div>
+    <div class="disclaimer-box" style="margin-top:20px;">Resultados individuais, obtidos com acompanhamento nutricional e/ou de treino ao longo de meses. Não há garantia de resultado igual ou similar — cada organismo e cada rotina são diferentes.</div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var TRANSFORMACOES = [
+      { foto: 'transformacao-felipe.jpg', alt: 'Evolução física do Dr. Felipe Gomes, antes e depois', texto: 'O próprio Dr. Felipe colocando em prática o que orienta: nutrição estratégica aliada a treino inteligente.' },
+      { foto: 'transformacao-anonima-01.jpg', alt: 'Resultado real de paciente em acompanhamento, antes e depois', texto: 'Resultado real de paciente em acompanhamento nutricional e treino de força.' },
+      { foto: 'transformacao-aline.jpg', alt: 'Resultado real de paciente em recuperação, antes e depois', texto: 'Reconstrução da relação com a alimentação após tratamento de saúde, com acompanhamento nutricional especializado.' },
+      { foto: 'transformacao-michel.jpg', alt: 'Resultado real de paciente bariátrico, antes e depois', texto: 'Paciente em pós-operatório bariátrico, com evolução sustentada ao longo de meses de acompanhamento nutricional.' },
+      { foto: 'transformacao-matheus.jpg', alt: 'Resultado real de paciente, antes e depois', texto: 'Resultado alcançado com estratégia nutricional e constância, sem dietas restritivas ou cardio em excesso.' }
+    ];
+
+    var grid = document.getElementById('transformacoes-grid');
+    grid.innerHTML = TRANSFORMACOES.map(function (t) {
+      return '' +
+        '<div class="transformacao-card">' +
+          '<img src="' + t.foto + '" alt="' + t.alt + '" loading="lazy">' +
+          '<p>' + t.texto + '</p>' +
+        '</div>';
+    }).join('');
   })();
 </script>
 
