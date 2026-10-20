@@ -1007,7 +1007,7 @@
     .resultados-grid { grid-template-columns: 1fr; }
   }
 
-  /* ---------- TRANSFORMACOES (antes/depois) ---------- */
+  /* ---------- TRANSFORMACOES ---------- */
   .transformacoes { background: var(--surface-2); }
   .transformacoes-grid {
     display: grid;
@@ -1923,7 +1923,7 @@
       { title: 'Como funciona a consulta', desc: 'Atendimento presencial (Asa Sul) e online', tags: 'consulta presencial online como funciona agendar marcar', anchor: '#consulta' },
       { title: 'Calculadora de IMC', desc: 'Ferramenta gratuita: calcule seu IMC', tags: 'imc calculadora peso altura indice massa corporal', anchor: '#imc' },
       { title: 'Protocolo de Avaliação Física', desc: 'Baixe a ficha e tire suas medidas antes da consulta', tags: 'protocolo avaliacao fisica medidas fita metrica circunferencia pdf download baixar masculino feminino', anchor: '#protocolo-avaliacao' },
-      { title: 'Transformações Reais', desc: 'Antes e depois de pacientes e alunos em acompanhamento', tags: 'transformacao antes depois resultado emagrecimento foto real paciente aluno', anchor: '#transformacoes' },
+      { title: 'Transformações Reais', desc: 'Pacientes e alunos em acompanhamento', tags: 'transformacao resultado emagrecimento foto real paciente aluno', anchor: '#transformacoes' },
       { title: 'Conheça os Nutrientes', desc: 'Macro e micronutrientes: papel e deficiência', tags: 'nutrientes macronutrientes micronutrientes vitaminas minerais proteina carboidrato gordura ferro calcio vitamina', anchor: '#nutrientes' },
       { title: 'Chás e Infusões', desc: 'Benefícios, preparo, horário e contraindicações', tags: 'chas infusao camomila hortela menta gengibre cha verde hibisco erva cidreira melissa gestante lactante medicacao capim santo capim cidreira funcho erva doce alecrim oregano anis estrelado espinheira santa losna melao de sao caetano canela cravo centella asiatica cavalinha dente de leao bugre', anchor: '#chas' },
       { title: 'Aminoácidos', desc: 'Leucina, triptofano, lisina, glutamina: papel e deficiência', tags: 'aminoacidos leucina triptofano lisina glutamina proteina', anchor: '#nutrientes' },
@@ -4533,21 +4533,21 @@
 <script>
   (function () {
     var TRANSFORMACOES = [
-      { foto: 'transformacao-felipe.jpg', alt: 'Evolução física do Dr. Felipe Gomes, antes e depois', texto: 'O próprio Dr. Felipe colocando em prática o que orienta: nutrição estratégica aliada a treino inteligente.' },
-      { foto: 'transformacao-anonima-01.jpg', alt: 'Resultado real de paciente em acompanhamento, antes e depois', texto: 'Resultado real de paciente em acompanhamento nutricional e treino de força.' },
-      { foto: 'transformacao-aline.jpg', alt: 'Resultado real de paciente em recuperação, antes e depois', texto: 'Reconstrução da relação com a alimentação após tratamento de saúde, com acompanhamento nutricional especializado.' },
-      { foto: 'transformacao-michel.jpg', alt: 'Resultado real de paciente bariátrico, antes e depois', texto: 'Paciente em pós-operatório bariátrico, com evolução sustentada ao longo de meses de acompanhamento nutricional.' },
-      { foto: 'transformacao-matheus.jpg', alt: 'Resultado real de paciente, antes e depois', texto: 'Resultado alcançado com estratégia nutricional e constância, sem dietas restritivas ou cardio em excesso.' },
-      { foto: 'transformacao-clarisse.jpg', alt: 'Evolução de atleta em acompanhamento, antes e depois', texto: 'Evolução de atleta feminina em poucos meses, com acompanhamento nutricional e treinos em casal.' },
-      { foto: 'transformacao-leonardo.jpg', alt: 'Resultado real de paciente que virou atleta, antes e depois', texto: 'Resultado real de homem que mudou seu estilo de vida e agora compete no palco do fisiculturismo.' },
-      { foto: 'transformacao-juba.jpg', alt: 'Transformação física com treino de força, antes e depois', texto: 'Transformação alcançada com alimentação equilibrada e treino de força constante, sem dietas restritivas ou cardio exagerado.' },
-      { foto: 'transformacao-fernando.jpg', alt: 'Paciente em acompanhamento nutricional, antes e depois', texto: 'Paciente em acompanhamento nutricional, com ganho de energia, humor estável, sono reparador e exames bioquímicos normalizados.' },
-      { foto: 'transformacao-leti.jpg', alt: 'Progresso real de paciente, antes e depois', texto: 'Progresso real: menor percentual de gordura corporal com acompanhamento nutricional consistente.' },
-      { foto: 'transformacao-erllane.jpg', alt: 'Resultado real de paciente, antes e depois', texto: 'Resultado real de paciente que afinou a cintura e reduziu gordura nas costas com constância no acompanhamento nutricional.' },
-      { foto: 'transformacao-deyse.jpg', alt: 'Evolução constante de paciente, antes e depois', texto: 'Evolução constante: mais força e definição com acompanhamento nutricional dedicado.' },
-      { foto: 'transformacao-lean.jpg', alt: 'Paciente em fase de recomposição, antes e depois', texto: 'Paciente em fase de recomposição, com redução de gordura, energia elevada e foco no ganho de massa muscular.' },
-      { foto: 'transformacao-rosiane.jpg', alt: 'Transformação conquistada por paciente, antes e depois', texto: 'Transformação conquistada com mudança de hábitos, disciplina e constância, sem dietas extremas nem cardio excessivo.' },
-      { foto: 'transformacao-anonima-02.jpg', alt: 'Evolução real de paciente, antes e depois', texto: 'Evolução real com acompanhamento nutricional e treino personalizado.' }
+      { foto: 'transformacao-felipe.jpg', alt: 'Evolução física do Dr. Felipe Gomes', texto: 'O próprio Dr. Felipe colocando em prática o que orienta: nutrição estratégica aliada a treino inteligente.' },
+      { foto: 'transformacao-anonima-01.jpg', alt: 'Resultado real de paciente em acompanhamento', texto: 'Resultado real de paciente em acompanhamento nutricional e treino de força.' },
+      { foto: 'transformacao-aline.jpg', alt: 'Resultado real de paciente em recuperação', texto: 'Reconstrução da relação com a alimentação após tratamento de saúde, com acompanhamento nutricional especializado.' },
+      { foto: 'transformacao-michel.jpg', alt: 'Resultado real de paciente bariátrico', texto: 'Paciente em pós-operatório bariátrico, com evolução sustentada ao longo de meses de acompanhamento nutricional.' },
+      { foto: 'transformacao-matheus.jpg', alt: 'Resultado real de paciente', texto: 'Resultado alcançado com estratégia nutricional e constância, sem dietas restritivas ou cardio em excesso.' },
+      { foto: 'transformacao-clarisse.jpg', alt: 'Evolução de atleta em acompanhamento', texto: 'Evolução de atleta feminina em poucos meses, com acompanhamento nutricional e treinos em casal.' },
+      { foto: 'transformacao-leonardo.jpg', alt: 'Resultado real de paciente que virou atleta', texto: 'Resultado real de homem que mudou seu estilo de vida e agora compete no palco do fisiculturismo.' },
+      { foto: 'transformacao-juba.jpg', alt: 'Transformação física com treino de força', texto: 'Transformação alcançada com alimentação equilibrada e treino de força constante, sem dietas restritivas ou cardio exagerado.' },
+      { foto: 'transformacao-fernando.jpg', alt: 'Paciente em acompanhamento nutricional', texto: 'Paciente em acompanhamento nutricional, com ganho de energia, humor estável, sono reparador e exames bioquímicos normalizados.' },
+      { foto: 'transformacao-leti.jpg', alt: 'Progresso real de paciente', texto: 'Progresso real: menor percentual de gordura corporal com acompanhamento nutricional consistente.' },
+      { foto: 'transformacao-erllane.jpg', alt: 'Resultado real de paciente', texto: 'Resultado real de paciente que afinou a cintura e reduziu gordura nas costas com constância no acompanhamento nutricional.' },
+      { foto: 'transformacao-deyse.jpg', alt: 'Evolução constante de paciente', texto: 'Evolução constante: mais força e definição com acompanhamento nutricional dedicado.' },
+      { foto: 'transformacao-lean.jpg', alt: 'Paciente em fase de recomposição', texto: 'Paciente em fase de recomposição, com redução de gordura, energia elevada e foco no ganho de massa muscular.' },
+      { foto: 'transformacao-rosiane.jpg', alt: 'Transformação conquistada por paciente', texto: 'Transformação conquistada com mudança de hábitos, disciplina e constância, sem dietas extremas nem cardio excessivo.' },
+      { foto: 'transformacao-anonima-02.jpg', alt: 'Evolução real de paciente', texto: 'Evolução real com acompanhamento nutricional e treino personalizado.' }
     ];
 
     var grid = document.getElementById('transformacoes-grid');
