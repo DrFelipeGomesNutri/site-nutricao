@@ -1,5 +1,7 @@
-<title>Felipe Gomes Nutricionista: Nutrição Integrativa e Esportiva em Brasília</title>
-<meta name="description" content="Felipe Gomes, nutricionista (CRN 18187) em Brasília, com Nutrição Integrativa e Esportiva na Asa Sul, atendimento presencial e online. Foco em emagrecimento, fertilidade e saúde da mulher. 5,0★ no Google, 254 avaliações.">
+<!doctype html>
+<html lang="pt-BR">
+<title>Nutricionista em Brasília, Asa Sul | Dr. Felipe Gomes</title>
+<meta name="description" content="Dr. Felipe Gomes, nutricionista (CRN 18187) na Asa Sul, Brasília. Nutrição Integrativa e Esportiva, presencial e online: emagrecimento, fertilidade e saúde da mulher.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%97%3C/text%3E%3C/svg%3E">
@@ -11,9 +13,14 @@
 {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
+  "@id": "https://drfelipegomesnutri.com.br/#consultorio",
   "name": "Felipe Gomes Nutricionista",
+  "alternateName": "Dr. Felipe Gomes, Nutricionista em Brasília",
+  "description": "Dr. Felipe Gomes, nutricionista (CRN 18187) na Asa Sul, Brasília. Nutrição Integrativa e Esportiva, presencial e online: emagrecimento, fertilidade e saúde da mulher.",
   "url": "https://drfelipegomesnutri.com.br/",
-  "telephone": "+5561984684078",
+  "image": "https://drfelipegomesnutri.com.br/og-image.jpg",
+  "logo": "https://drfelipegomesnutri.com.br/logo-marca.png",
+  "telephone": "+5561998472986",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "SGAS 616 Sul, Centro Clínico Linea Vitta, Bloco C, Sala 102/104",
@@ -22,10 +29,58 @@
     "postalCode": "70200-760",
     "addressCountry": "BR"
   },
-  "areaServed": "Brasília, DF",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:30",
+      "closes": "18:00"
+    }
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "agendamento presencial",
+      "telephone": "+5561998472986",
+      "availableLanguage": "pt-BR"
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "consulta online e dúvidas de pacientes",
+      "telephone": "+5561984684078",
+      "availableLanguage": "pt-BR"
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Brasília"
+    },
+    {
+      "@type": "Country",
+      "name": "Brasil"
+    }
+  ],
   "medicalSpecialty": "Nutrição Integrativa e Esportiva",
+  "employee": {
+    "@type": "Person",
+    "@id": "https://drfelipegomesnutri.com.br/#felipe",
+    "name": "Felipe Gomes",
+    "jobTitle": "Nutricionista",
+    "identifier": "CRN 18187",
+    "sameAs": [
+      "https://instagram.com/drfelipegomesnutri"
+    ]
+  },
   "sameAs": [
     "https://instagram.com/drfelipegomesnutri",
+    "https://linktr.ee/felipegomesnutricionista",
     "https://www.google.com/maps/search/?api=1&query=Felipe+Gomes+Nutricionista+Asa+Sul+Brasilia"
   ],
   "aggregateRating": {
@@ -1853,7 +1908,7 @@
 
 <header class="site">
   <div class="wrap nav-row">
-    <div class="nav-logo"><img src="nav-logo.png" alt="Felipe Gomes Nutrição Integrativa" width="720" height="170" /><img class="logo-shine" src="logo-ciclo.webp" alt="" aria-hidden="true" decoding="async" width="432" height="102"></div>
+    <div class="nav-logo"><img src="nav-logo.png" alt="Felipe Gomes Nutrição Integrativa" width="720" height="170" /><img class="logo-shine" src="logo-ciclo.webp" alt="Felipe Gomes Nutricionista" aria-hidden="true" decoding="async" width="432" height="102"></div>
     <div class="nav-right">
       <div class="site-menu" id="site-menu">
         <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Menu do site" aria-expanded="false">
@@ -3609,8 +3664,8 @@
     // Só 2 <img> no DOM (a visível e a que vai entrar), pra nunca baixar
     // as 14 fotos de uma vez — cada troca busca só a foto seguinte.
     frame.innerHTML =
-      '<img alt="" loading="eager">' +
-      '<img alt="" loading="lazy">';
+      '<img alt="Momento de atendimento no consultório" loading="eager">' +
+      '<img alt="Momento de atendimento no consultório" loading="lazy">';
     var imgs = frame.querySelectorAll('img');
     var visivel = 0;
     function preencher(imgEl, foto) {
@@ -3705,6 +3760,23 @@
     }
   })();
 </script>
+
+<section id="perguntas-frequentes" class="faq-secao">
+  <div class="container">
+    <h2>Perguntas frequentes</h2>
+    <details class="faq-item"><summary>Como agendo uma consulta presencial?</summary><p>Pelo WhatsApp da secretária da clínica, (61) 99847-2986. O atendimento presencial é de segunda a sexta, das 9h30 às 18h, no Centro Clínico Linea Vitta (SGAS 616 Sul, Bloco C, Salas 102/104, Asa Sul, Brasília).</p></details>
+    <details class="faq-item"><summary>Vocês atendem online?</summary><p>Sim. A consulta online é para quem mora em outra cidade, estado ou país. O agendamento online é feito direto com o Dr. Felipe pelo WhatsApp (61) 98468-4078.</p></details>
+    <details class="faq-item"><summary>Como é a primeira consulta?</summary><p>O Dr. Felipe olha seus sintomas, sua rotina, seu histórico e seus exames. Na consulta presencial também é feita a avaliação corporal, com bioimpedância e dobras cutâneas. O plano alimentar é montado para a sua rotina e entregue e explicado na própria consulta.</p></details>
+    <details class="faq-item"><summary>Atende quem treina ou é atleta?</summary><p>Sim. Além da Nutrição Esportiva, o Dr. Felipe atende emagrecimento, fertilidade, saúde da mulher e recuperação, com olhar integrativo.</p></details>
+    <details class="faq-item"><summary>Tenho uma dúvida sobre o meu plano. Com quem falo?</summary><p>Dúvidas específicas do seu acompanhamento são com o Dr. Felipe, pelo WhatsApp (61) 98468-4078. Remarcar consulta presencial é com a secretária, pelo (61) 99847-2986.</p></details>
+  </div>
+  <style>
+    .faq-secao { padding:48px 16px; } .faq-secao h2 { text-align:center; margin-bottom:20px; }
+    .faq-item { max-width:760px; margin:0 auto 10px; border:1px solid var(--border, #ddd); border-radius:10px; padding:12px 16px; background:var(--card, transparent); }
+    .faq-item summary { cursor:pointer; font-weight:700; } .faq-item p { margin:10px 0 0; line-height:1.6; }
+  </style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Como agendo uma consulta presencial?", "acceptedAnswer": {"@type": "Answer", "text": "Pelo WhatsApp da secretária da clínica, (61) 99847-2986. O atendimento presencial é de segunda a sexta, das 9h30 às 18h, no Centro Clínico Linea Vitta (SGAS 616 Sul, Bloco C, Salas 102/104, Asa Sul, Brasília)."}}, {"@type": "Question", "name": "Vocês atendem online?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. A consulta online é para quem mora em outra cidade, estado ou país. O agendamento online é feito direto com o Dr. Felipe pelo WhatsApp (61) 98468-4078."}}, {"@type": "Question", "name": "Como é a primeira consulta?", "acceptedAnswer": {"@type": "Answer", "text": "O Dr. Felipe olha seus sintomas, sua rotina, seu histórico e seus exames. Na consulta presencial também é feita a avaliação corporal, com bioimpedância e dobras cutâneas. O plano alimentar é montado para a sua rotina e entregue e explicado na própria consulta."}}, {"@type": "Question", "name": "Atende quem treina ou é atleta?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Além da Nutrição Esportiva, o Dr. Felipe atende emagrecimento, fertilidade, saúde da mulher e recuperação, com olhar integrativo."}}, {"@type": "Question", "name": "Tenho uma dúvida sobre o meu plano. Com quem falo?", "acceptedAnswer": {"@type": "Answer", "text": "Dúvidas específicas do seu acompanhamento são com o Dr. Felipe, pelo WhatsApp (61) 98468-4078. Remarcar consulta presencial é com a secretária, pelo (61) 99847-2986."}}]}</script>
+</section>
 
 <section id="contato">
   <div class="wrap">
