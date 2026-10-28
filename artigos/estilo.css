@@ -466,6 +466,9 @@
     scroll-margin-top: 90px;
     transition: box-shadow 0.4s ease, border-color 0.4s ease;
   }
+  .destaque-link { display: inline-block; margin-top: 12px; font-weight: 700; font-size: .9rem; color: var(--gold-deep); text-decoration: none; }
+  .destaque-link:hover { text-decoration: underline; }
+  .destaque-card .destaque-link { color: var(--gold); }
   .destaque-card:target { border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 35%, transparent); }
   .destaque-card .num {
     font-family: var(--font-display);
@@ -1828,6 +1831,7 @@ body { background: var(--bg); }
 .art-corpo td, .art-corpo th { border: 1px solid var(--border); padding: 6px 8px; }
 .art-cta-box { margin: 30px 0; padding: 22px; border-radius: var(--radius-s); background: var(--navy); color: #fff; text-align: center; }
 .art-cta-box p { margin: 0 0 14px; }
+.art-cta-box .art-nicho { display: block; margin-top: 14px; color: var(--gold-light); font-weight: 700; font-size: .92rem; }
 .art-relacionados h2 { font-size: 1.15rem; margin: 30px 0 14px; }
 .art-lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
 .art-filtros { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 24px; }
