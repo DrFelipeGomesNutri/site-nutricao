@@ -1797,6 +1797,16 @@
   .artigo-card .artigo-ler { font-weight: 700; font-size: .85rem; color: var(--gold-deep); }
   .artigo-card.is-alerta { border-left: 4px solid var(--gold-light); }
   .artigos-ver-todos { text-align: center; margin-top: 26px; }
+  .trajetoria { margin-top: 18px; }
+  .trajetoria summary { display: inline-block; cursor: pointer; list-style: none; padding: 12px 20px; border-radius: 999px; border: 1px solid var(--border); color: var(--text); font-weight: 600; }
+  .trajetoria summary::-webkit-details-marker { display: none; }
+  .trajetoria[open] summary { margin-bottom: 16px; }
+  .trajetoria-nota { color: var(--text-muted); font-size: .92rem; margin: 0 0 14px; }
+  .trajetoria h3 { font-size: 1.05rem; margin: 18px 0 10px; }
+  .trajetoria-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .trajetoria-grid figure { margin: 0; }
+  .trajetoria-grid img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 10px; display: block; }
+  .trajetoria-grid figcaption { font-size: .8rem; color: var(--text-muted); margin-top: 6px; line-height: 1.35; }
 
 /* páginas de artigo (paginas_artigos.py) */
 body { background: var(--bg); }
