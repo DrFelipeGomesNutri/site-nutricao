@@ -14,8 +14,11 @@
 ## Páginas principais
 - [Página inicial](https://drfelipegomesnutri.com.br/): serviços, como funciona a consulta, perguntas frequentes e contato
 - [Artigos](https://drfelipegomesnutri.com.br/artigos/): textos em linguagem simples, com fontes científicas (PubMed)
-- [Emagrecimento](https://drfelipegomesnutri.com.br/emagrecimento.html)
-- [Nutrição Esportiva](https://drfelipegomesnutri.com.br/nutricao-esportiva.html)
+- [Emagrecimento](https://drfelipegomesnutri.com.br/emagrecimento.html): plano alimentar a partir dos exames e da rotina, para perder gordura preservando músculo, sem dieta genérica e sem promessa de quilos
+- [Caneta emagrecedora](https://drfelipegomesnutri.com.br/caneta-emagrecedora.html): acompanhamento nutricional para quem usa medicamentos GLP-1 (Ozempic, Mounjaro, Wegovy); o médico cuida do remédio, a nutrição cuida de proteína, massa muscular, intestino e da fase sem o remédio
+- [Fertilidade](https://drfelipegomesnutri.com.br/fertilidade.html): nutrição para tentantes, SOP, endometriose, reprodução assistida e fertilidade masculina; o casal pode vir junto na primeira consulta
+- [Saúde da Mulher](https://drfelipegomesnutri.com.br/saude-da-mulher.html): TPM, SOP, endometriose e menopausa, sempre junto com o acompanhamento médico
+- [Nutrição Esportiva](https://drfelipegomesnutri.com.br/nutricao-esportiva.html): hipertrofia, corrida, crossfit, TAF de concursos e competições; o Dr. Felipe também é profissional de educação física (CREF)
 
 ## Perfis oficiais
 - Instagram: https://instagram.com/drfelipegomesnutri
