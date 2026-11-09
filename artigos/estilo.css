@@ -1702,6 +1702,9 @@
   }
   @media (max-width: 860px) {
     .musica-flutuante { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+    /* celular: so o icone, para nao cobrir o texto dos cartoes (print do Felipe, 05/11) */
+    .musica-toggle { width: 48px; height: 48px; padding: 0; justify-content: center; }
+    .musica-toggle .musica-rotulo { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   }
   .musica-toggle {
     display: inline-flex;
