@@ -1801,6 +1801,13 @@
   .artigo-card h3 { font-size: 1.02rem; line-height: 1.35; margin: 0; }
   .artigo-card p { font-size: .86rem; color: var(--text-muted); margin: 0; flex: 1; }
   .artigo-card .artigo-ler { font-weight: 700; font-size: .85rem; color: var(--gold-deep); }
+  /* tema escuro: dourado-escuro sobre o azul dava contraste 3,35; o dourado principal da 6,78 (PageSpeed, 10/11) */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .destaque-link,
+    :root:not([data-theme="light"]) .artigo-card .artigo-ler { color: var(--gold); }
+  }
+  :root[data-theme="dark"] .destaque-link,
+  :root[data-theme="dark"] .artigo-card .artigo-ler { color: var(--gold); }
   .artigo-card.is-alerta { border-left: 4px solid var(--gold-light); }
   .artigos-ver-todos { text-align: center; margin-top: 26px; }
   .trajetoria { margin-top: 18px; }
