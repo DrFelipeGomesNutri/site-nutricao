@@ -30,7 +30,7 @@
   document.addEventListener("click", function (ev) {
     var a = ev.target.closest && ev.target.closest('a[href*="wa.me"]');
     if (!a || lerEscolha() === "recusado") return;
-    var dados = { pagina: location.pathname, numero: a.href.indexOf("998472986") > -1 ? "secretaria" : "pessoal" };
+    var dados = { pagina: location.pathname, numero: a.href.indexOf("998472986") > -1 ? "secretaria" : "pessoal", origem: a.getAttribute("data-origem") || "outro" };
     window.posthog && window.posthog.capture("clique_whatsapp", dados);
     window.gtag && window.gtag("event", "clique_whatsapp", dados);
   });
